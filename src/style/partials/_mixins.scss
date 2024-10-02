@@ -1,0 +1,10 @@
+@mixin animation-showRight{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #081b29;
+    top: 0;
+    right: 0;
+    animation: showRight 1s ease forwards;
+}

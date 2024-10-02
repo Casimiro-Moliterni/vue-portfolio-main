@@ -7,7 +7,7 @@ export default {
     return {
       links: [
         {
-          name: "Casimiro",
+          name: "Casimiro.",
           label: "home",
         },
         {
@@ -15,16 +15,16 @@ export default {
           label: "home",
         },
         {
+          name: "About",
+          label: "about",
+        },
+        {
           name: "Projects",
           label: "projects",
         },
         {
-          name: "About",
-          label: "home",
-        },
-        {
           name: "Skills",
-          label: "home",
+          label: "skills",
         },
       ],
     };
@@ -33,11 +33,12 @@ export default {
 </script>
 
 <template >
-  <header class="py-2 pt-4">
+  <header class="py-2 pt-1 pt-lg-4">
     <nav class="d-flex container">
-      <ul class="d-flex list-style-none gap-5 w-100 ps-0">
+      <router-link class="logo" :to="{ name: links[0].label }" >{{ links[0].name }}</router-link> 
+      <ul class="d-none d-lg-flex list-style-none gap-5 w-100 ps-0 justify-content-end mb-0 align-items-end;">
         <template v-for="link in links">
-          <li data-aos="fade-down" :class="{ 'flex-grow-1 logo': link.name === 'Casimiro', 'links' : link.name !== 'Casimiro' }" >
+          <li v-if="link.name !== 'Casimiro.'" :class="{ 'flex-grow-1 logo': link.name === 'Casimiro', 'links' : link.name !== 'Casimiro' }" >
            <router-link :to="{ name: link.label }" >{{ link.name }}</router-link> 
           </li>
         </template>
@@ -47,6 +48,7 @@ export default {
 </template>
 
 <style lang="scss">
+@use '../style/partials/mixins' as*;
 header {
   color: white;
   position: fixed;
@@ -57,8 +59,20 @@ header {
    font-size: 25px;
    font-weight: 600;
    color: #ededed;
+   position: relative;
+   &::before{
+    @include animation-showRight;
+        right:0;
+        animation-delay: .4s;
+      }
  }
-
+ul{
+  position: relative;
+  &::after {
+    @include animation-showRight;
+        right: 0;
+        animation-delay: 3s;
+      }
  .links a{
    font-size: 18px;
    color: #ededed;
@@ -66,6 +80,10 @@ header {
    &:hover{
       color: #00abf0;
    }
- }
+   
+ } 
+}
+ 
+
 }
 </style>

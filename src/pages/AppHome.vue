@@ -1,10 +1,12 @@
 <script>
 import Headers from "../components/Headers.vue";
+import  TextTyping from "../components/TextTyping.vue";
 
 export default {
   name: "AppHome",
   components: {
     Headers,
+    TextTyping
   },
   data() {
     return {
@@ -33,44 +35,52 @@ export default {
 <template>
   <Headers></Headers>
   <section id="AppHome" class="pages">
-    <div class="overlay"></div>
     <div class="container">
-      <div class="home-content"  data-aos="fade-right"
-     data-aos-offset="300"
-     data-aos-easing="ease-in-sine">
-        <h1>Ciao, sono Casimiro Moliterni</h1>
-        <h3>Junior Full Stack Web Developer</h3>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint porro
-          illo non dolores molestias autem dicta! Numquam cumque vero corporis.
-          Unde, fugiat. Iure voluptatem doloribus id ut omnis assumenda
-          dignissimos!
-        </p>
-
-        <!-- container button  -->
-        <div class="btn-box">
-          <button>test 1</button>
-          <button>test 2</button>
+      <div class="row flex-lg-wrap justify-content-lg-between justify-content-center">
+        <div
+          class="home-content col-12 col-lg-8"
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+        >
+          <h1>Ciao, sono Casimiro Moliterni</h1>
+          <TextTyping></TextTyping>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint porro
+            illo non dolores molestias autem dicta! Numquam cumque vero
+            corporis. Unde, fugiat. Iure voluptatem doloribus id ut omnis
+            assumenda dignissimos!
+          </p>
+          <!-- container button  -->
+          <div class="btn-box">
+            <button>test 1</button>
+            <button>test 2</button>
+          </div>
         </div>
-      </div>
-      <!-- container social  -->
-      <div class="home-social"data-aos="fade-up"
-      data-aos-anchor-placement="top-bottom">
-        <ul class="ps-0 mb-0 w-100">
-          <template v-for="link in social">
-            <li>
-              <a v-bind:href="link.url" target="_blank">
-                <i :class="link.class"></i>
-              </a>
-            </li>
-          </template>
-        </ul>
+        <!-- container social  -->
+        <div class="img-my col-12 col-lg-4"></div>
+        <div
+          class="home-social"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+        >
+          <ul class="ps-0 mb-0 w-100">
+            <template v-for="link in social">
+              <li>
+                <a v-bind:href="link.url" target="_blank">
+                  <i :class="link.class"></i>
+                </a>
+              </li>
+            </template>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <style scoped lang="scss">
+ @use '../style/partials/mixins' as *;
 :root {
   --bg-color: #081b29;
   --second-bg-color: #112e42;
@@ -87,42 +97,84 @@ export default {
   display: flex;
   align-items: center;
   /* inizio home content  */
- .overlay{
-  position: absolute;
-  top: 70%;
-  left: 80%;
-  height: 400px;
-  width: 400px;
-  border-radius: 100%;
-  z-index: 2;
-  transform: translate(-70%,-80%);
-   background-image: url('../assets/img/io.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  transition: 3s;
-  &:hover{
-    opacity: 0.4;
-    background-color: #081B29;
-    transition: 3s
+  .img-my {
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
+    background-image: url("../assets/img/io.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: 3s;
+    z-index: 1;
+    position: relative;
+    &::before{
+      @include animation-showRight;
+        top: 0;
+        right: 0;
+        animation-delay: 3s;
+        background-image: url("../assets/img/io-remove-bg.png");
+      }
+    
+  &::after {
+    @include animation-showRight;
+    z-index: 3;
+        top: 0;
+        right: 0;
+        animation-delay: 3s;
+      }
+      &:hover {
+        opacity: 0.8;
+        border: 3px solid #00abf0;
+        transition: 3s;
+        background-image: url("../assets/img/test.png");
+      }
+      
+      @media screen and (max-width:1200px) {
+        margin: 20px 0;
+        height: 200px;
+        width: 200px;
+    }
+      @media screen and (max-width:540px) {
+        margin: 20px 0;
+        height: 100px;
+        width: 100px;
+    }
   }
- }
+
   .home-content {
     color: white;
-    width: 60%;
     h1 {
       font-size: 56px;
       font-weight: 700;
       line-height: 1.2;
+      position: relative;
+      @media screen and (max-width:992px) {
+        font-size: 40px;
+    }
+      &::before {
+       @include animation-showRight;
+       animation-delay: 1s;
+      }
     }
     h3 {
       font-size: 32px;
       font-weight: 700;
       color: #00abf0;
+      position: relative;
+      &::before {
+        @include animation-showRight;
+        animation-delay: 1.3s;
+      }
     }
     p {
       font-size: 16px;
       margin: 20px 0 40px;
+      position: relative;
+      &::before {
+        @include animation-showRight;
+        animation-delay: 1.6s;
+      }
     }
 
     /* btn  */
@@ -132,6 +184,16 @@ export default {
       height: 50px;
       display: flex;
       justify-content: space-between;
+      position: relative;
+
+      @media screen and (max-width:992px) {
+           margin: 0 auto;
+    }
+      &::before {
+        @include animation-showRight;
+        z-index: 2;
+        animation-delay: 1.9s;
+      }
 
       button {
         position: relative;
@@ -186,6 +248,17 @@ export default {
     position: absolute;
     bottom: 40px;
     width: 170px;
+
+    @media screen and (max-width:992px) {
+      bottom: 20px;
+      width: 170px;
+    }
+
+    &::before {
+      @include animation-showRight;
+        animation-delay: 2.5s;
+        z-index: 2;
+      }
     ul {
       display: flex;
       justify-content: space-between;

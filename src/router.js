@@ -17,6 +17,16 @@ const router = createRouter({
             name: 'projects',
             component: Projects
         },
+        {
+            path: '/skills',
+            name: 'skills',
+            component: Projects
+        },
+        {
+            path: '/about',
+            name: 'about',
+            component: Projects
+        },
         // 404 not found rule
         {
             path: "/:pathMatch(.*)*",
