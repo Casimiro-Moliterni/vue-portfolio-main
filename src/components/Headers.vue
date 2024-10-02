@@ -9,22 +9,27 @@ export default {
         {
           name: "Casimiro.",
           label: "home",
+          href:'#AppHome'
         },
         {
           name: "Home",
           label: "home",
+           href:'#AppHome'
         },
         {
           name: "About",
           label: "about",
+          href:'#AboutMe'
         },
         {
           name: "Projects",
           label: "projects",
+           href:'#AppHome'
         },
         {
           name: "Skills",
           label: "skills",
+           href:'#AppHome'
         },
       ],
     };
@@ -33,13 +38,13 @@ export default {
 </script>
 
 <template >
-  <header class="py-2 pt-1 pt-lg-4">
+  <header class="py-2 pt-1 pt-lg-4 test_debug">
     <nav class="d-flex container">
-      <router-link class="logo" :to="{ name: links[0].label }" >{{ links[0].name }}</router-link> 
-      <ul class="d-none d-lg-flex list-style-none gap-5 w-100 ps-0 justify-content-end mb-0 align-items-end;">
+      <a class="logo" :href="links[0].href" >{{ links[0].name }}</a> 
+      <ul class="d-none d-lg-flex list-style-none gap-5 w-100 ps-0 justify-content-end mb-0 align-items-end">
         <template v-for="link in links">
           <li v-if="link.name !== 'Casimiro.'" :class="{ 'flex-grow-1 logo': link.name === 'Casimiro', 'links' : link.name !== 'Casimiro' }" >
-           <router-link :to="{ name: link.label }" >{{ link.name }}</router-link> 
+           <a :href="link.href" >{{ link.name }}</a> 
           </li>
         </template>
       </ul>
@@ -83,7 +88,6 @@ ul{
    
  } 
 }
- 
 
 }
 </style>

@@ -8,3 +8,31 @@
     right: 0;
     animation: showRight 1s ease forwards;
 }
+
+@mixin button-primary{
+        position: relative;
+        width: 150px;
+        background-color: #00abf0;
+        border: 2px solid #00abf0;
+        border-radius: 8px;
+        font-size: 19px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        color: #081b29;
+        z-index: 1;
+        overflow: hidden;
+}
+
+@mixin button-primary-hover{
+    
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-color: #081b29;
+        transition: 0.5s;
+      
+}

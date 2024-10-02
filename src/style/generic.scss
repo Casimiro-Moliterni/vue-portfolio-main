@@ -8,6 +8,14 @@ a{
     text-decoration: none;
 }
 
+html {
+  scroll-behavior: smooth;
+ }
+  .pages {
+    height: 100vh;
+  }
+
+
  /* KEYFRAMES ANIMATION  */
 
  @keyframes showRight {
@@ -15,5 +23,14 @@ a{
     100%{
       width: 0;
     }
+  }
+  .test_debug{
+    border:2px solid red;  }
+
+  :root {
+    --bg-color: #081b29;
+    --second-bg-color: #112e42;
+    --text-color: #ededed;
+    --main-color: #00abf0;
   }
   

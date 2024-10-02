@@ -57,7 +57,7 @@ export default {
 </script>
 
 <template>
-  <div class="d-flex align-items-center container-text">
+  <div class="d-flex align-items-center container-text ">
     <h3 class="typed-text">{{ typedText }}</h3>
     <span class="cursor" :class="{ typing: isTyping }">&nbsp;</span>
   </div>
@@ -73,6 +73,10 @@ export default {
     @include animation-showRight;
     animation-delay: 1.3s;
   }
+  @media screen and (max-width:992px) {
+  
+        justify-content: center;
+    }
 }
 .typed-text {
   font-size: 32px;
