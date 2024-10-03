@@ -5,12 +5,12 @@ export default {
   name: "AboutMe",
   components: {
     TextTyping,
-  },
+  }
 };
 </script>
 
 <template>
-  <section id="AboutMe" class="pages">
+  <section id="AboutMe">
     <div class="container h-100 pt-4">
       <h1 class="text-center">About<span> Me</span></h1>
       <div class="img-about">
@@ -39,6 +39,8 @@ export default {
 #AboutMe {
   background-color: #0E2C43;
   padding-top: 70px;
+  min-height: 100vh;
+  padding-bottom: 30px;
   h1 {
     font-size: 56px;
     color: white;

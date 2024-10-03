@@ -22,14 +22,14 @@ export default {
           href:'#AboutMe'
         },
         {
-          name: "Projects",
-          label: "projects",
-           href:'#AppHome'
-        },
-        {
           name: "Skills",
           label: "skills",
-           href:'#AppHome'
+           href:'#Skills'
+        },
+        {
+          name: "Projects",
+          label: "projects",
+           href:'#Projects'
         },
       ],
     };
@@ -39,7 +39,7 @@ export default {
 
 <template >
   <header class="py-2 pt-1 pt-lg-4 test_debug">
-    <nav class="d-flex container">
+    <nav class="d-flex container ">
       <a class="logo" :href="links[0].href" >{{ links[0].name }}</a> 
       <ul class="d-none d-lg-flex list-style-none gap-5 w-100 ps-0 justify-content-end mb-0 align-items-end">
         <template v-for="link in links">
@@ -53,13 +53,14 @@ export default {
 </template>
 
 <style lang="scss">
-@use '../style/partials/mixins' as*;
+@use "../style/partials/variables" as *;
+@use "../style/partials/mixins" as *;
 header {
   color: white;
   position: fixed;
   width: 100%;
-  background-color: transparent;
-
+  z-index: 11;
+  background-color: $primary_color;
  .logo{
    font-size: 25px;
    font-weight: 600;

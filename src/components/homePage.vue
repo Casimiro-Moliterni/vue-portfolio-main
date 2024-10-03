@@ -2,9 +2,9 @@
 import  TextTyping from "./TextTyping.vue";
 
 export default {
-  name: "homepage",
+  name: "homePage",
   components: {
-    TextTyping
+    TextTyping,
   },
   data() {
     return {
@@ -28,6 +28,9 @@ export default {
     };
   },
   methods: {},
+   mounted() {
+    this.$emit('changeHeaderColor', '#3498db'); // Cambia il colore dell'header
+  },
 };
 </script>
 <template>
