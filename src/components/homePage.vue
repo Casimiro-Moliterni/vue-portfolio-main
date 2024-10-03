@@ -1,5 +1,5 @@
 <script>
-import  TextTyping from "./TextTyping.vue";
+import TextTyping from "./TextTyping.vue";
 
 export default {
   name: "homePage",
@@ -28,24 +28,28 @@ export default {
     };
   },
   methods: {},
-   mounted() {
-    this.$emit('changeHeaderColor', '#3498db'); // Cambia il colore dell'header
+  mounted() {
+    this.$emit("changeHeaderColor", "#3498db"); // Cambia il colore dell'header
   },
 };
 </script>
 <template>
   <section id="AppHome" class="pages">
     <div class="container">
-      <div class="row flex-lg-wrap justify-content-lg-between justify-content-center">
+      <div
+        class="row flex-lg-wrap justify-content-lg-between justify-content-center"
+      >
         <div
           class="home-content col-12 col-lg-8"
           data-aos="fade-right"
           data-aos-offset="300"
           data-aos-easing="ease-in-sine"
         >
-          <h1>Ciao, sono Casimiro Moliterni</h1>
+          <h1 class="">
+            <a href="#AboutMe">Ciao, sono <span>Casimiro Moliterni</span></a>
+          </h1>
           <TextTyping></TextTyping>
-          <p>
+          <p class="">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint porro
             illo non dolores molestias autem dicta! Numquam cumque vero
             corporis. Unde, fugiat. Iure voluptatem doloribus id ut omnis
@@ -67,7 +71,7 @@ export default {
           <ul class="ps-0 mb-0 w-100">
             <template v-for="link in social">
               <li>
-                <a v-bind:href="link.url" target="_blank">
+                <a class="" v-bind:href="link.url" target="_blank">
                   <i :class="link.class"></i>
                 </a>
               </li>
@@ -80,7 +84,7 @@ export default {
 </template>
 
 <style scoped lang="scss">
- @use '../style/partials/mixins' as *;
+@use "../style/partials/mixins" as *;
 :root {
   --bg-color: #081b29;
   --second-bg-color: #112e42;
@@ -105,37 +109,37 @@ export default {
     transition: 3s;
     z-index: 1;
     position: relative;
-    &::before{
+    &::before {
       @include animation-showRight;
-        top: 0;
-        right: 0;
-        animation-delay: 3s;
-        background-image: url("../assets/img/io-remove-bg.png");
-      }
-    
-  &::after {
-    @include animation-showRight;
-    z-index: 3;
-        top: 0;
-        right: 0;
-        animation-delay: 3s;
-      }
-      &:hover {
-        opacity: 0.8;
-        border: 3px solid #00abf0;
-        transition: 3s;
-        background-image: url("../assets/img/test.png");
-      }
-      
-      @media screen and (max-width:1200px) {
-        margin: 20px 0;
-        height: 200px;
-        width: 200px;
+      top: 0;
+      right: 0;
+      animation-delay: 3s;
+      background-image: url("../assets/img/io-remove-bg.png");
     }
-      @media screen and (max-width:540px) {
-        margin: 20px 0;
-        height: 100px;
-        width: 100px;
+
+    &::after {
+      @include animation-showRight;
+      z-index: 3;
+      top: 0;
+      right: 0;
+      animation-delay: 3s;
+    }
+    &:hover {
+      opacity: 0.8;
+      border: 3px solid #00abf0;
+      transition: 3s;
+      background-image: url("../assets/img/test.png");
+    }
+
+    @media screen and (max-width: 1200px) {
+      margin: 20px 0;
+      height: 200px;
+      width: 200px;
+    }
+    @media screen and (max-width: 540px) {
+      margin: 20px 0;
+      height: 100px;
+      width: 100px;
     }
   }
 
@@ -146,13 +150,28 @@ export default {
       font-weight: 700;
       line-height: 1.2;
       position: relative;
-      @media screen and (max-width:992px) {
+      span {
+        color: #00abf0;
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 1;
+        color: transparent;
+        -webkit-text-stroke: 1.5px #ffffff;
+        text-shadow: 0 0 0 #00abf0;
+        transition: all 250ms;
+        &:hover {
+          text-shadow: 4px 4px 0 #00abf0;
+          transform: translate(-2px, -2px);
+        }
+      }
+      @media screen and (max-width: 992px) {
         font-size: 40px;
         text-align: center;
-    }
+      }
       &::before {
-       @include animation-showRight;
-       animation-delay: 1s;
+        @include animation-showRight;
+        animation-delay: 1s;
       }
     }
     p {
@@ -174,9 +193,9 @@ export default {
       justify-content: space-between;
       position: relative;
 
-      @media screen and (max-width:992px) {
-           margin: 0 auto;
-    }
+      @media screen and (max-width: 992px) {
+        margin: 0 auto;
+      }
       &::before {
         @include animation-showRight;
         z-index: 2;
@@ -237,16 +256,16 @@ export default {
     bottom: 40px;
     width: 170px;
 
-    @media screen and (max-width:992px) {
+    @media screen and (max-width: 992px) {
       bottom: 20px;
       width: 170px;
     }
 
     &::before {
       @include animation-showRight;
-        animation-delay: 2.5s;
-        z-index: 2;
-      }
+      animation-delay: 2.5s;
+      z-index: 2;
+    }
     ul {
       display: flex;
       justify-content: space-between;

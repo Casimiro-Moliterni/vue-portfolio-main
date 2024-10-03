@@ -9,7 +9,7 @@ export default{
     <section id="Projects">
         <div class="container">
             
-            <h1 class="text-center">MY <span>Projects</span></h1>
+            <h1 class="text-center">My <span>Projects</span></h1>
 
         </div>
     </section>
@@ -27,9 +27,10 @@ export default{
         padding: 40px 30px;
         height: 100%;
         h1 {
+      color: white;
       text-align: center;
       font-size: 56px;
-      font-weight: 800;
+      font-weight: 900;
       margin-bottom: 70px;
       span {
         color: $secondary_color;

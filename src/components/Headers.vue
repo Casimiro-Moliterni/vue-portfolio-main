@@ -5,6 +5,7 @@ export default {
   name: "Headers",
   data() {
     return {
+      active:1,
       links: [
         {
           name: "Casimiro.",
@@ -33,18 +34,22 @@ export default {
         },
       ],
     };
-  },
+  },methods:{
+    linkActive(index){
+     return this.active = index ;
+    }
+  }
 };
 </script>
 
 <template >
-  <header class="py-2 pt-1 pt-lg-4 test_debug">
+  <header class="py-2 pt-1 pt-lg-4  ">
     <nav class="d-flex container ">
-      <a class="logo" :href="links[0].href" >{{ links[0].name }}</a> 
+      <a class="logo " :href="links[0].href" >{{ links[0].name }}</a> 
       <ul class="d-none d-lg-flex list-style-none gap-5 w-100 ps-0 justify-content-end mb-0 align-items-end">
-        <template v-for="link in links">
+        <template v-for="link,index in links">
           <li v-if="link.name !== 'Casimiro.'" :class="{ 'flex-grow-1 logo': link.name === 'Casimiro', 'links' : link.name !== 'Casimiro' }" >
-           <a :href="link.href" >{{ link.name }}</a> 
+           <a  :href="link.href" class="" @click="linkActive(index)" :class="{active : index === active}">{{ link.name }}</a> 
           </li>
         </template>
       </ul>
@@ -69,6 +74,7 @@ header {
    &::before{
     @include animation-showRight;
         right:0;
+        z-index: 22;
         animation-delay: .4s;
       }
  }
@@ -83,6 +89,23 @@ ul{
    font-size: 18px;
    color: #ededed;
    font-weight: 500;
+   transition: .5s;
+   position: relative;
+  
+
+   &.active{
+    color: #00abf0; 
+    transition: 2s;
+    /* &::before{
+    position: absolute;
+    bottom: -10px;
+    content: '';
+    width: 100%;
+    height: 4px;
+    border-radius: .1rem;
+    z-index: 1;
+    border: .2rem solid #00abf0;} */
+   }
    &:hover{
       color: #00abf0;
    }

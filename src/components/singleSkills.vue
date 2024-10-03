@@ -51,12 +51,17 @@ export default defineComponent({
       store, // Importa lo store all'interno del componente
       currentSlide: 0, // Indice della slide corrente
       breakpoints: {
-        // 1024 and up
+        450: {
+          itemsToShow: 2.5,
+          autoplay:2000,
+          pauseAutoplayOnHover: true,
+        },
         1425: {
           itemsToShow: 4.5,
           autoplay:2000,
           pauseAutoplayOnHover: true,
         },
+        // 1024 and up
       }
     };
   },
@@ -85,10 +90,12 @@ export default defineComponent({
   border-radius: 8px;
   border: 4px solid $secondary_color;
   overflow: hidden;
+
   img {
     height: 150px;
     width: 150px;
     object-fit: contain;
+    transition: transform 0.5s; /* Aggiungi transition solo qui se vuoi effetti sull'immagine interna */
   }
 }
 .carousel__item_bottom {
@@ -103,7 +110,8 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
   transition: background-color 0.5s, height 0.5s; /* Add transition for background color and height */
- &.active {
+ 
+  &.active {
     background-color: lightblue; /* Colore di sfondo per la slide attiva */
     height: 200px; /* Imposta l'altezza desiderata */
     &:hover img {
@@ -131,4 +139,5 @@ export default defineComponent({
     }
   }
 }
+
 </style>
