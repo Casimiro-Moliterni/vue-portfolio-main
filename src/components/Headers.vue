@@ -49,7 +49,7 @@ export default {
       <ul class="d-none d-lg-flex list-style-none gap-5 w-100 ps-0 justify-content-end mb-0 align-items-end">
         <template v-for="link,index in links">
           <li v-if="link.name !== 'Casimiro.'" :class="{ 'flex-grow-1 logo': link.name === 'Casimiro', 'links' : link.name !== 'Casimiro' }" >
-           <a  :href="link.href" class="" @click="linkActive(index)" :class="{active : index === active}">{{ link.name }}</a> 
+           <a  :href="link.href" class="header-link" @click="linkActive(index)" :class="{active : index === active }">{{ link.name }}</a> 
           </li>
         </template>
       </ul>

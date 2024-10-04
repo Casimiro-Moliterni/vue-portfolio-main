@@ -1,4 +1,5 @@
 <script>
+import { store } from "../store";
 import TextTyping from "./TextTyping.vue";
 
 export default {
@@ -8,6 +9,8 @@ export default {
   },
   data() {
     return {
+      store,
+      activeSection: null, // Stato della sezione attiva,
       social: [
         {
           name: "GitHub",
@@ -27,9 +30,16 @@ export default {
       ],
     };
   },
-  methods: {},
+  computed: {
+    // ActiveLInk(){
+    //   const AboutSection = document.querySelector('#AbouteMe');
+    //   console.log(AboutSection)
+    // }
+  },
+  methods: {
+  },
   mounted() {
-    this.$emit("changeHeaderColor", "#3498db"); // Cambia il colore dell'header
+   store.ActiveLInk();
   },
 };
 </script>
@@ -45,8 +55,18 @@ export default {
           data-aos-offset="300"
           data-aos-easing="ease-in-sine"
         >
-          <h1 class="">
-            <a href="#AboutMe">Ciao, sono <span>Casimiro Moliterni</span></a>
+          <h1 class="waviy">
+            <span class="move" style="--i: 1">C</span>
+            <span class="move" style="--i: 2">i</span>
+            <span class="move" style="--i: 3">a</span>
+            <span class="move" style="--i: 4">o,</span>
+            <span class="move" style="--i: 5">S</span>
+            <span class="move" style="--i: 6">o</span>
+            <span class="move" style="--i: 7">n</span>
+            <span class="move" style="--i: 8">o</span>
+            <a href="#AboutMe">
+              <span class="my-name"> Casimiro Moliterni</span></a
+            >
           </h1>
           <TextTyping></TextTyping>
           <p class="">
@@ -85,6 +105,28 @@ export default {
 
 <style scoped lang="scss">
 @use "../style/partials/mixins" as *;
+
+.waviy {
+  position: relative;
+  /* -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, 0.2)); */
+}
+.waviy .move {
+  position: relative;
+  display: inline-block;
+  color: #ffffff;
+  animation: waviy 1.5s infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+@keyframes waviy {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-5px);
+  }
+}
 :root {
   --bg-color: #081b29;
   --second-bg-color: #112e42;
@@ -150,7 +192,7 @@ export default {
       font-weight: 700;
       line-height: 1.2;
       position: relative;
-      span {
+      .my-name {
         color: #00abf0;
         text-decoration: none;
         text-align: center;

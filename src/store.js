@@ -54,4 +54,32 @@ export const store = reactive({
   ],
   BackEndProjects: {},
   FrontEndProjects: {},
+
+  ActiveLInk() {
+    const links = document.querySelectorAll("nav .header-link");
+    const btn = document.querySelector(".my-name");
+   links.forEach((e,index) => {
+      btn.addEventListener("click", function () {
+        if (e.getAttribute('href') === "#AboutMe") {
+          e.classList.add("active"); // Aggiungi la classe .active solo all'elemento con id="AboutMe"
+        } else {
+          e.classList.remove("active"); // Rimuovi la classe .active dagli altri elementi se necessario
+        }
+      });
+
+    // Aggiungi un event listener per ogni link
+links.forEach((link) => {
+  link.addEventListener('click', function() {
+    // Rimuovi la classe .active da tutti i link
+    links.forEach((l) => {
+      l.classList.remove('active');
+    });
+
+    // Aggiungi la classe .active al link cliccato
+    link.classList.add('active');
+  });
+});
+    });
+    // AboutSection.classList.toggle('active');
+  },
 });

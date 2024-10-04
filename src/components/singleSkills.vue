@@ -1,38 +1,3 @@
-<template>
-  <div>
-    <!-- Carosello principale che mostra le informazioni delle abilità -->
-    <Carousel
-      id="gallery"
-      :items-to-show="1"
-      :wrap-around="true"
-      v-model="currentSlide"
-    >
-      <Slide v-for="(slide, index) in store.allSkills" :key="index">
-        <div class="carousel__item">
-          <h3>{{ slide.name }}</h3>
-          <img :src="getImageUrl(slide.path)" alt="" />
-        </div>
-      </Slide>
-    </Carousel>
-
-    <!-- Carosello secondario per le miniature -->
-    <Carousel
-    :breakpoints="breakpoints"
-      id="thumbnails"
-      :items-to-show="4"
-      :wrap-around="true"
-      v-model="currentSlide"
-      ref="carousel"
-    >
-      <!-- Mostra le miniature delle abilità. L'attributo key deve essere unico -->
-      <Slide v-for="(slide, index) in store.allSkills" :key="index" >
-        <div class="carousel__item_bottom" @click="slideTo(index)"  :class="{ active : currentSlide === index }">
-          <img :src="getImageUrl(slide.path)" alt="" />
-        </div>
-      </Slide>
-    </Carousel>
-  </div>
-</template>
 
 <script>
 import { store } from "../store";
@@ -72,12 +37,49 @@ export default defineComponent({
     },
     getImageUrl(name) {
       const url = new URL(`../assets/img/skills/${name}`, import.meta.url).href;
-      console.log("Image URL:", url); // Controlla il percorso
+
       return url;
     },
   },
 });
 </script>
+
+<template>
+  <div>
+    <!-- Carosello principale che mostra le informazioni delle abilità -->
+    <Carousel
+      id="gallery"
+      :items-to-show="1"
+      :wrap-around="true"
+      v-model="currentSlide"
+    >
+      <Slide v-for="(slide, index) in store.allSkills" :key="index">
+        <div class="carousel__item">
+          <h3>{{ slide.name }}</h3>
+          <img :src="getImageUrl(slide.path)" alt="" />
+        </div>
+      </Slide>
+    </Carousel>
+
+    <!-- Carosello secondario per le miniature -->
+    <Carousel
+    :breakpoints="breakpoints"
+      id="thumbnails"
+      :items-to-show="4"
+      :wrap-around="true"
+      v-model="currentSlide"
+      ref="carousel"
+    >
+      <!-- Mostra le miniature delle abilità. L'attributo key deve essere unico -->
+      <Slide v-for="(slide, index) in store.allSkills" :key="index" >
+        <div class="carousel__item_bottom" @click="slideTo(index)"  :class="{ active : currentSlide === index }">
+          <img :src="getImageUrl(slide.path)" alt="" />
+        </div>
+      </Slide>
+    </Carousel>
+  </div>
+</template>
+
 
 <style scoped lang="scss">
 @use "../style/partials/variables" as *;
