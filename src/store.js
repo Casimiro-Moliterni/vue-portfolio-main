@@ -55,6 +55,12 @@ export const store = reactive({
   BackEndProjects: {},
   FrontEndProjects: {},
 
+ listProjectLink:['Front-End','All','Back-End','Design'],
+
+
+
+  // funzioni ////////////////////////////////
+
   ActiveLInk() {
     const links = document.querySelectorAll("nav .header-link");
     const btn = document.querySelector(".my-name");
@@ -82,4 +88,5 @@ links.forEach((link) => {
     });
     // AboutSection.classList.toggle('active');
   },
+
 });
