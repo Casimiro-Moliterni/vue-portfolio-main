@@ -1,0 +1,148 @@
+{
+  "FrontEndProjects": [
+    {
+      "name": "Vue Boolflix",
+      "slug": "Vue-Boolflix",
+      "poster": "vue-boolfix.png",
+      "technologies": [
+        {
+          "name": "VUE Js",
+          "path": "vue.png"
+        }
+      ],
+      "albums": [
+        {
+          "name": "",
+          "path": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "Vue Comics",
+      "slug": "Vue-Comics",
+      "poster": "vue-comics.png",
+      "technologies": [
+        {
+          "name": "VUE Js",
+          "path": "vue.png"
+        }
+      ],
+      "albums": [
+        {
+          "name": "",
+          "path": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "Vue Streaming Movie",
+      "slug": "Vue-Streaming-Movie",
+      "poster": "vue-project-movie.png",
+      "technologies": [
+        {
+          "name": "VUE Js",
+          "path": "vue.png"
+        }
+      ],
+      "albums": [
+        {
+          "name": "",
+          "path": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "Vue Slider",
+      "slug": "Vue-Slider",
+      "poster": "vue-slider.png",
+      "technologies": [
+        {
+          "name": "VUE Js",
+          "path": "vue.png"
+        }
+      ],
+      "albums": [
+        {
+          "name": "",
+          "path": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "Vue BoolZapp",
+      "slug": "Vue-BoolZapp",
+      "poster": "vue_boolzapp_poster.png",
+      "technologies": [
+        {
+          "name": "VUE Js",
+          "path": "vue.png"
+        }
+      ],
+      "albums": [
+        {
+          "name": "",
+          "path": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "Vue Yu-Gi-Ho",
+      "slug": "Vue-Yu-Gi-ho",
+      "poster": "vue-yu-gi-ho.png",
+      "technologies": [
+        {
+          "name": "VUE Js",
+          "path": "vue.png"
+        }
+      ],
+      "albums": [
+        {
+          "name": "",
+          "path": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "Memory Game",
+      "slug": "Memory-Game",
+      "poster": "js-memory-game.png",
+      "technologies": [
+        {
+          "name": "Javascript",
+          "path": "javascript.png"
+        }
+      ],
+      "albums": [
+        {
+          "name": "",
+          "path": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "React Light Cinema",
+      "slug": "React-Light-Cinema",
+      "poster": "react-light-cinema.png",
+      "technologies": [
+        {
+          "name": "React",
+          "path": "react.png"
+        }
+      ],
+      "albums": [
+        {
+          "name": "",
+          "path": "",
+          "description": ""
+        }
+      ]
+    }
+  ]
+}

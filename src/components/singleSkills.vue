@@ -36,7 +36,7 @@ export default defineComponent({
       this.currentSlide = val;
     },
     getImageUrl(name) {
-      const url = new URL(`../assets/img/skills/${name}`, import.meta.url).href;
+      const url = new URL(`../assets/img/${name}`, import.meta.url).href;
 
       return url;
     },

@@ -1,9 +1,13 @@
 <script>
 import { store } from '../store';
+import Projects from './Projects.vue';
 
 export default {
   name: "SingleProject",
   components: {},
+  props:{
+    project:Object
+  },
   data() {
     return {
         store
@@ -15,14 +19,14 @@ export default {
 </script>
 
 <template>
-  <div class="col" v-for="i in store.FrontEndProjects">
+  <div class="col" >
     <div class="my-card">
       <img
         src="https://images.unsplash.com/photo-1477666250292-1419fac4c25c?auto=format&fit=crop&w=667&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D"
         alt=""
       />
       <div class="info">
-        <h3>Titolo</h3>
+        <h3>{{ project.name }}</h3>
         <p>breve descrizione</p>
         <button class="btn-arrow">
           <i class="fa-solid fa-arrow-up"></i>
