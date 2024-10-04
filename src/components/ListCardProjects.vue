@@ -1,9 +1,11 @@
 <script>
+import { store } from '../store';
 import SingleProject from './SingleProject.vue';
 
 export default {
   name: "ListCardProjetcs",
   components: {
+      store,
     SingleProject
   },
   data() {
@@ -20,7 +22,7 @@ export default {
       <!-- single component  -->
       <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-3">
 
-        <SingleProject></SingleProject>
+        <SingleProject ></SingleProject>
 
       </div>
 
@@ -31,7 +33,7 @@ export default {
 @use "../style/partials/mixins" as *;
 
 .row{
-    
+
 }
 
 </style>

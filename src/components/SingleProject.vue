@@ -1,9 +1,13 @@
 <script>
+import { store } from '../store';
+
 export default {
   name: "SingleProject",
   components: {},
   data() {
-    return {};
+    return {
+        store
+    };
   },
   methods: {},
   mounted() {},
@@ -11,7 +15,7 @@ export default {
 </script>
 
 <template>
-  <div class="col" >
+  <div class="col" v-for="i in store.FrontEndProjects">
     <div class="my-card">
       <img
         src="https://images.unsplash.com/photo-1477666250292-1419fac4c25c?auto=format&fit=crop&w=667&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D"
