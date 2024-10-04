@@ -6,7 +6,7 @@ import Front_End_json from '../json/Front_End_json.json';
 export default {
   name: "ListCardProjects",
   components: {
-    SingleProject
+    SingleProject,
   },
   data() {
     return {
@@ -25,7 +25,7 @@ export default {
   <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-3">
     <!-- Loop corretto attraverso myJson.FrontEndProjects -->
     <SingleProject 
-      v-for="(project, index) in store.FrontEndArrayProjects.FrontEndProjects" 
+      v-for="(project, index) in store.ArraySelectedProjects" 
       :key="index" 
       :project="project"
     />

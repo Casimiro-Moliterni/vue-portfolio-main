@@ -1,0 +1,159 @@
+{
+    "DesignProjects": [
+      {
+        "name": "Boolando",
+        "slug": "Boolando",
+        "poster": "design-boolando.png",
+        "technologies": [
+          {
+            "name": "HTML",
+            "path": "html.png"
+          },
+          {
+            "name": "CSS",
+            "path": "css.png"
+          }
+        ],
+        "albums": [
+          {
+            "name": "",
+            "path": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "Dashboard",
+        "slug": "Dashboard",
+        "poster": "design-dashboard.png",
+        "technologies": [
+            {
+                "name": "HTML",
+                "path": "html.png"
+              },
+              {
+                "name": "CSS",
+                "path": "css.png"
+              }
+        ],
+        "albums": [
+          {
+            "name": "",
+            "path": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "Discord",
+        "slug": "Discord",
+        "poster": "design-discord.png",
+        "technologies": [
+            {
+                "name": "HTML",
+                "path": "html.png"
+              },
+              {
+                "name": "CSS",
+                "path": "css.png"
+              }
+        ],
+        "albums": [
+          {
+            "name": "",
+            "path": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "DropBox",
+        "slug": "DropBox",
+        "poster": "design-dropbox.png",
+        "technologies": [
+            {
+                "name": "HTML",
+                "path": "html.png"
+              },
+              {
+                "name": "CSS",
+                "path": "css.png"
+              }
+        ],
+        "albums": [
+          {
+            "name": "",
+            "path": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "Portfolio Design",
+        "slug": "Portfolio-Design",
+        "poster": "design-portfolio.png",
+        "technologies": [
+            {
+                "name": "HTML",
+                "path": "html.png"
+              },
+              {
+                "name": "CSS",
+                "path": "css.png"
+              }
+        ],
+        "albums": [
+          {
+            "name": "",
+            "path": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "Spotify",
+        "slug": "Spotify",
+        "poster": "design-spotify.jpg",
+        "technologies": [
+            {
+                "name": "HTML",
+                "path": "html.png"
+              },
+              {
+                "name": "CSS",
+                "path": "css.png"
+              }
+        ],
+        "albums": [
+          {
+            "name": "",
+            "path": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "Responsive Layout",
+        "slug": "Responsive-Layout",
+        "poster": "responsive-layout.png",
+        "technologies": [
+            {
+                "name": "HTML",
+                "path": "html.png"
+              },
+              {
+                "name": "CSS",
+                "path": "css.png"
+              }
+        ],
+        "albums": [
+          {
+            "name": "",
+            "path": "",
+            "description": ""
+          }
+        ]
+      }
+    ]
+  }
+  

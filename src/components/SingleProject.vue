@@ -13,8 +13,16 @@ export default {
         store
     };
   },
-  methods: {},
-  mounted() {},
+  methods: {
+    getImageUrl(name) {
+      const url = new URL(`../assets/img/${name}`, import.meta.url).href;
+
+      return url;
+    },
+  },
+  mounted() {
+
+  },
 };
 </script>
 
@@ -22,8 +30,8 @@ export default {
   <div class="col" >
     <div class="my-card">
       <img
-        src="https://images.unsplash.com/photo-1477666250292-1419fac4c25c?auto=format&fit=crop&w=667&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D"
-        alt=""
+        :src="getImageUrl(`img_project_porfolio/poster/${project.poster}`)"
+        :alt="project.slug"
       />
       <div class="info">
         <h3>{{ project.name }}</h3>

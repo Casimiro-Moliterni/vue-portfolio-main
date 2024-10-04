@@ -32,12 +32,30 @@ export const store = reactive({
     ],
   },
 
-  FrontEndArrayProjects: [
-  ],
-  BackEndProjects: {},
-  FrontEndProjects: {},
+  FrontEndArrayProjects: [],
+  BackEndArrayProjects: [],
+  DesignArrayProjects: [],
+  ArraySelectedProjects:[],
 
- listProjectLink:['Front-End','All','Back-End','Design'],
+ listProjectLink:[
+  {
+    name:'Front-End',
+    type:'frontend'
+  },
+  {
+    name:'All',
+    type:'all'
+  },
+  {
+    name:'Back-End',
+    type:'backend'
+  },
+  {
+    name:'Design',
+    type:'design'
+  },
+
+],
 
 
 
@@ -70,5 +88,6 @@ links.forEach((link) => {
     });
     // AboutSection.classList.toggle('active');
   },
+  
 
 });

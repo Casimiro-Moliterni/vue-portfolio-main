@@ -1,0 +1,106 @@
+{
+    "BackEndProjects": [
+      {
+        "name": "Bool&Bnb",
+        "slug": "Bool-Bnb",
+        "poster": "bool-bnb-laravel.png",
+        "technologies": [
+          {
+            "name": "Laravel",
+            "path": "vue.png"
+          },
+          {
+            "name": "PHP",
+            "path": "php.png"
+          },
+          {
+            "name": "Javascript",
+            "path": "javascript.png"
+          }
+        ],
+        "albums": [
+          {
+            "name": "",
+            "path": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "Laravel Projects",
+        "slug": "Laravel-Projects",
+        "poster": "laravel_project-api.png",
+        "technologies": [
+            {
+                "name": "Laravel",
+                "path": "vue.png"
+              },
+              {
+                "name": "PHP",
+                "path": "php.png"
+              },
+              {
+                "name": "Javascript",
+                "path": "javascript.png"
+              }
+        ],
+        "albums": [
+          {
+            "name": "",
+            "path": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "Laravel DC Comics",
+        "slug": "Laravel-DC-Comics",
+        "poster": "laravel-dc-comics.png",
+        "technologies": [
+            {
+                "name": "Laravel",
+                "path": "vue.png"
+              },
+              {
+                "name": "PHP",
+                "path": "php.png"
+              },
+              {
+                "name": "Javascript",
+                "path": "javascript.png"
+              }
+        ],
+        "albums": [
+          {
+            "name": "",
+            "path": "",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "PHP Dischi ",
+        "slug": "PHP-Dischi",
+        "poster": "php-dishi-json.png",
+        "technologies": [
+            {
+                "name": "PHP",
+                "path": "php.png"
+              },
+              {
+                "name": "Javascript",
+                "path": "javascript.png"
+              }
+        ],
+        "albums": [
+          {
+            "name": "",
+            "path": "",
+            "description": ""
+          }
+        ]
+      }
+ 
+    ]
+  }
+  

@@ -1,7 +1,9 @@
 <script>
 import { store } from "../store";
 import ListCardProjects from "./ListCardProjects.vue";
-
+import Front_End_json from "../json/Front_End_json.json";
+import Back_End_json from "../json/Back_End_json.json";
+import Design_json from "../json/Design_json.json";
 export default {
   name: "Projects",
   components: {
@@ -10,13 +12,43 @@ export default {
   data() {
     return {
       store,
-      active:1,
+      active: 1,
+      ArraySelectedProjects: [],
     };
   },
   methods: {
     linkActive(index) {
       return (this.active = index);
     },
+    shuffleArray(array) {
+      return array.sort(() => Math.random() - 0.5);
+    },
+    filterProjects(link) {
+      if (link === "Front-End") {
+        store.ArraySelectedProjects =
+          store.FrontEndArrayProjects.FrontEndProjects;
+      } else if (link === "Back-End") {
+        store.ArraySelectedProjects =
+          store.BackEndArrayProjects.BackEndProjects;
+      } else if (link === "Design") {
+        store.ArraySelectedProjects = store.DesignArrayProjects.DesignProjects;
+      } else {
+        const allProjects = [
+      ...store.FrontEndArrayProjects.FrontEndProjects,
+      ...store.BackEndArrayProjects.BackEndProjects,
+      ...Design_json.DesignProjects
+    ];
+    
+    // Mescolare l'array risultante
+    store.ArraySelectedProjects = this.shuffleArray(allProjects);
+      }
+    },
+  },
+  mounted() {
+    store.FrontEndArrayProjects = Front_End_json;
+    store.BackEndArrayProjects = Back_End_json;
+    store.DesignArrayProjects = Design_json;
+    this.filterProjects("All");
   },
 };
 </script>
@@ -28,19 +60,21 @@ export default {
       <h1 class="text-center">My <span>Projects</span></h1>
 
       <div class="wrapper-ul">
-
         <ul class="p-0 m-0 row row-cols-2 row-cols-lg-4 justify-content-center">
-
-          <li   v-for="link,index in store.listProjectLink" class="cursor-pointer" @click="linkActive(index)" :class="{ 'active-li': index === active }" >
-
-            <button class="fs-4 fw-bold cursor-pointer border-0"  :class="{active : index === active}">
-              {{ link }}
+          <li
+            v-for="(link, index) in store.listProjectLink"
+            class="btn-list-projects"
+            @click="filterProjects(link.name), linkActive(index)"
+            :class="{ 'active-li': index === active }"
+          >
+            <button
+              class="fs-4 fw-bold cursor-pointer border-0"
+              :class="{ active: index === active }"
+            >
+              {{ link.name }}
             </button>
-
           </li>
-
         </ul>
-
       </div>
       <!-- lista con i componenti delle card dei progetti  -->
       <ListCardProjects></ListCardProjects>
@@ -87,7 +121,7 @@ export default {
           align-items: center;
           justify-content: center;
           position: relative;
-
+          cursor: pointer;
           // Transizione fluida per ::after quando li è active
           &::after {
             position: absolute;
@@ -137,4 +171,3 @@ export default {
   }
 }
 </style>
-

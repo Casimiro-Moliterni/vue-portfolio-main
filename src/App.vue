@@ -1,19 +1,23 @@
 <script>
 import Headers from './components/Headers.vue';
+import { store } from './store';
+
 export default{
     components:{
-        Headers
+        Headers,
+        store
     },
     data(){
         return{
-
+             
         }
     },
   methods: {
-    changeBgHeader(color){
-      this.headerBg=color;
-    }
+
   },
+  mounted(){
+
+  }
 }
 
 </script>
