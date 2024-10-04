@@ -1,34 +1,77 @@
 <script>
-import { store } from '../store'; 
-import SingleProject from './SingleProject.vue';
-import Front_End_json from '../json/Front_End_json.json'; 
+import { store } from "../store";
+import SingleProject from "./SingleProject.vue";
+import Front_End_json from "../json/Front_End_json.json";
+ // Import Swiper Vue.js components
+ import { Swiper, SwiperSlide } from 'swiper/vue';
+
+// Import Swiper styles
+import 'swiper/css';
+
+import 'swiper/css/grid';
+import 'swiper/css/pagination';
+
+
+// import required modules
+import { Grid, Pagination } from 'swiper/modules';
+// import function to register Swiper custom elements
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
 
 export default {
   name: "ListCardProjects",
   components: {
     SingleProject,
+    Swiper,
+    SwiperSlide,
   },
   data() {
     return {
       store,
+      modules: [Grid, Pagination],
     };
   },
   mounted() {
     // Controlla la struttura del JSON
-    store.FrontEndArrayProjects = Front_End_json 
+    store.FrontEndArrayProjects = Front_End_json;
+   
   },
 };
 </script>
 
 <template>
+  <div class="row">
+
+    <swiper
+        :slidesPerView="3"
+        :grid="{
+          rows: 2,
+        }"
+        :spaceBetween="30"
+        :pagination="{
+          clickable: true,
+        }"
+        :modules="modules"
+        class="mySwiper"
+      > 
+        <swiper-slide   v-for="(project, index) in store.ArraySelectedProjects"
+          :key="index"
+          :project="project">
+          <SingleProject
+          :project="project"
+        />
+        </swiper-slide>
+      </swiper>
+  </div>
   <!-- Contenitore dei progetti -->
   <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-3">
     <!-- Loop corretto attraverso myJson.FrontEndProjects -->
-    <SingleProject 
-      v-for="(project, index) in store.ArraySelectedProjects" 
-      :key="index" 
+    <!-- <SingleProject
+      v-for="(project, index) in store.ArraySelectedProjects"
+      :key="index"
       :project="project"
-    />
+    /> -->
   </div>
 </template>
 
@@ -38,5 +81,8 @@ export default {
 
 .row {
   // Stili personalizzati per la classe .row
+  justify-content: center
+}.swiper {
+  height: 600px;
 }
 </style>
