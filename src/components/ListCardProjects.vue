@@ -33,8 +33,6 @@ export default {
     };
   },
   mounted() {
-    // Controlla la struttura del JSON
-    store.FrontEndArrayProjects = Front_End_json;
   },
 };
 </script>
@@ -42,18 +40,18 @@ export default {
 <template>
   <div class="row">
     <swiper
-      :slidesPerView="3"
       :grid="{
         rows: 2,
       }"
       :mousewheel="true"
-      :spaceBetween="50"
+      :spaceBetween="30"
+      :slidesPerView="3"
       :pagination="{
         clickable: true,
       }"
       :autoplay="{
         delay: 2500,
-        disableOnInteraction: true,
+        disableOnInteraction: false,
       }"
       :modules="modules"
       class="mySwiper"
@@ -85,8 +83,11 @@ export default {
 .row {
   // Stili personalizzati per la classe .row
   justify-content: center;
-}
-.swiper {
-  height: 600px;
+   height: 600px;
+   .swiper {
+     height: 600px;
+     padding: 0 20px;
+     overflow: hidden;
+     }
 }
 </style>
