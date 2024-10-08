@@ -1,7 +1,7 @@
 <script>
 import Headers from './components/Headers.vue';
 import { store } from './store';
-
+import { toggle } from './scroll_section.js'
 export default{
     components:{
         Headers,
@@ -16,7 +16,7 @@ export default{
 
   },
   mounted(){
-
+     toggle()
   }
 }
 

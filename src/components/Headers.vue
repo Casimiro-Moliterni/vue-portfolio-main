@@ -32,6 +32,11 @@ export default {
           label: "projects",
            href:'#Projects'
         },
+        {
+          name: "Contact",
+          label: "contact",
+           href:'#Contact'
+        },
       ],
     };
   },methods:{
@@ -44,12 +49,15 @@ export default {
 
 <template >
   <header class="py-2 pt-1 pt-lg-4  ">
-    <nav class="d-flex container ">
+    <nav class="d-flex container justify-content-between">
       <a class="logo " :href="links[0].href" >{{ links[0].name }}</a> 
-      <ul class="d-none d-lg-flex list-style-none gap-5 w-100 ps-0 justify-content-end mb-0 align-items-end">
+      <div class="wrapper-bars">
+        <button class="bars"><i class="fa-solid fa-bars"></i></button>
+      </div>
+      <ul class="">
         <template v-for="link,index in links">
           <li v-if="link.name !== 'Casimiro.'" :class="{ 'flex-grow-1 logo': link.name === 'Casimiro', 'links' : link.name !== 'Casimiro' }" >
-           <a  :href="link.href" class="" @click="linkActive(index)" :class="{active : index === active}">{{ link.name }}</a> 
+           <a  :href="link.href" class="link" @click="linkActive(index)" :class="{active : index === active}">{{ link.name }}</a> 
           </li>
         </template>
       </ul>
@@ -78,8 +86,38 @@ header {
         animation-delay: .4s;
       }
  }
+
+.wrapper-bars{
+ 
+     display: none;
+   
+ }
+
+ @media screen and (max-width:991px) {
+
+  .wrapper-bars{
+    display: block;
+  .bars{
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 1.5rem;
+  }
+   
+
+}
+
+ }
 ul{
   position: relative;
+  list-style: none;
+  gap: 3rem;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: end;
+  justify-content: end;
   &::after {
     @include animation-showRight;
         right: 0;
@@ -111,6 +149,31 @@ ul{
    }
    
  } 
+
+ @media screen and (max-width:991px) {
+
+  position: absolute;
+  flex-direction: column;
+  align-items: start;
+  gap: 2rem;
+  top: 100%;
+  left: -100%;
+  width: 100%;
+  padding: 1rem 4%;
+  background-color: $primary_color;
+  box-shadow: 0 .5rem 1rem rgba( 0,0,0, .2);
+  transition:.25s ease;
+  transition-delay: .25s;
+  &.activeUl{
+    left: 0;
+    transition-delay: 0s;
+  }
+ a{
+  display: block;
+  font-size: 2rem;
+ }
+
+}
 }
 
 }

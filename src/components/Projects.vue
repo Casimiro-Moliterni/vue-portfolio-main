@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       store,
-      active: 1,
+      active: 0,
       ArraySelectedProjects: [],
     };
   },
@@ -89,7 +89,7 @@ export default {
 #Projects {
   min-height: 100vh;
   background-color: #0e2c43;
-  padding-top: 50px;
+  padding-top: 30px;
 
   .container {
     padding: 40px 30px;
@@ -109,14 +109,14 @@ export default {
       width: 90%;
       margin: 0 auto;
       border-radius: 0.6rem;
-      margin-bottom: 2rem;
+      margin-bottom: 0rem;
       background-color: $primary_color;
 
       ul {
         align-items: center;
 
         li {
-          height: 70px;
+          height: 50px;
           display: flex;
           align-items: center;
           justify-content: center;

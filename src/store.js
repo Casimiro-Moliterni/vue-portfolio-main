@@ -38,13 +38,13 @@ export const store = reactive({
   ArraySelectedProjects:[],
 
  listProjectLink:[
+   {
+     name:'All',
+     type:'all'
+   },
   {
     name:'Front-End',
     type:'frontend'
-  },
-  {
-    name:'All',
-    type:'all'
   },
   {
     name:'Back-End',

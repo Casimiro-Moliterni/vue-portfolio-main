@@ -199,7 +199,7 @@ export default {
         text-transform: uppercase;
         line-height: 1;
         color: transparent;
-        -webkit-text-stroke: 1.5px #ffffff;
+        -webkit-text-stroke: 1px #ffffff;
         text-shadow: 0 0 0 #00abf0;
         transition: all 250ms;
         &:hover {
