@@ -158,13 +158,13 @@ export default {
 
     @media screen and (max-width: 1200px) {
       margin: 20px 0;
-      height: 200px;
-      width: 200px;
+      /* height: 200px;
+      width: 200px; */
     }
     @media screen and (max-width: 540px) {
       margin: 20px 0;
-      height: 100px;
-      width: 100px;
+      /* height: 300px;
+      width: 300px; */
     }
   }
 
