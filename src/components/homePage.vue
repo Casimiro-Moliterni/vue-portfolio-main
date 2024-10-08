@@ -11,23 +11,6 @@ export default {
     return {
       store,
       activeSection: null, // Stato della sezione attiva,
-      social: [
-        {
-          name: "GitHub",
-          url: "https://github.com/Casimiro-Moliterni",
-          class: "fa-brands fa-github",
-        },
-        {
-          name: "Linkedin",
-          url: "https://www.linkedin.com/in/casimiro-moliterni-9a7322281/",
-          class: "fa-brands fa-linkedin",
-        },
-        {
-          name: "Instagram",
-          url: "#",
-          class: "fa-brands fa-instagram",
-        },
-      ],
     };
   },
   computed: {
@@ -77,8 +60,8 @@ export default {
           </p>
           <!-- container button  -->
           <div class="btn-box">
-            <button>Contattami</button>
-            <button>Progetti</button>
+            <button><a href="#Contact">Contattami</a></button>
+            <button><a href="#Projects">Progetti</a></button>
           </div>
         </div>
         <!-- container social  -->
@@ -89,7 +72,7 @@ export default {
           data-aos-anchor-placement="top-bottom"
         >
           <ul class="ps-0 mb-0 w-100">
-            <template v-for="link in social">
+            <template v-for="link in store.social">
               <li>
                 <a class="" v-bind:href="link.url" target="_blank">
                   <i :class="link.class"></i>
@@ -296,11 +279,11 @@ export default {
   .home-social {
     position: absolute;
     bottom: 40px;
-    width: 170px;
+    width: 230px;
 
     @media screen and (max-width: 992px) {
       bottom: 20px;
-      width: 170px;
+      width: 230px;
     }
 
     &::before {

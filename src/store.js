@@ -31,7 +31,28 @@ export const store = reactive({
       { name: "Team Work", range: "80%", path: "teamwork.png" },
     ],
   },
-
+  social: [
+    {
+      name: "GitHub",
+      url: "https://github.com/Casimiro-Moliterni",
+      class: "fa-brands fa-github",
+    },
+    {
+      name: "Linkedin",
+      url: "https://www.linkedin.com/in/casimiro-moliterni-9a7322281/",
+      class: "fa-brands fa-linkedin",
+    },
+    {
+      name: "Instagram",
+      url: "#",
+      class: "fa-brands fa-instagram",
+    },
+    {
+      name: "phone",
+      url: "tel:3487037309",
+      class: "fa-solid fa-phone",
+    },
+  ],
   FrontEndArrayProjects: [],
   BackEndArrayProjects: [],
   DesignArrayProjects: [],
