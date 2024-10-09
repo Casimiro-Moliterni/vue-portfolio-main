@@ -56,7 +56,7 @@ export default {
 <template>
   <section id="Projects">
     <!-- container  -->
-    <div class="container">
+    <div class="container pt-4">
       <h1 class="text-center">My <span>Projects</span></h1>
 
       <div class="wrapper-ul">
@@ -89,20 +89,24 @@ export default {
 #Projects {
   min-height: 100vh;
   background-color: #0e2c43;
-  padding-top: 30px;
   @media screen and (max-width: 540px) {
     height: 100%;
     border: 1px solid yellow;
   }
   .container {
-    padding: 40px 30px;
+    padding: 0 30px;
     height: 100%;
     h1 {
       color: white;
       text-align: center;
       font-size: 56px;
       font-weight: 900;
+      margin-top: 70px;
+     margin-bottom: 40px;
+    @media screen and (max-width:540px) {
       margin-bottom: 40px;
+      margin-top: 40px;
+   }
       span {
         color: $secondary_color;
       }

@@ -90,7 +90,7 @@ export default {
 
 <template>
   <section id="Skills" class="position-relative">
-    <div class="container">
+    <div class="container pt-4">
       <h1>My <span>Skills</span></h1>
       <Carousel
         :wrapAround="true"
@@ -149,19 +149,22 @@ export default {
   height: 100vh;
   background-color: $primary_color;
   color: white;
+  @media screen and (max-width:540px) {
+    height: 105vh;
+   }
   .container {
-    padding: 20px 30px;
+    padding: 0 30px;
     height: 100%;
     h1 {
       text-align: center;
       font-size: 56px;
       font-weight: 900;
-      margin-top: 60px;
-      margin-bottom: 70px;
-      @media screen and (max-width: 540px) {
-        margin-top: 20px;
-        margin-bottom: 20px;
-      }
+      margin-top: 70px;
+    margin-bottom: 40px;
+    @media screen and (max-width:540px) {
+      margin-bottom: 20px;
+      margin-top: 40px;
+   }
       span {
         color: $secondary_color;
       }
@@ -273,6 +276,9 @@ export default {
     bottom: 40px;
     left: 50%;
     transform: translate(-50%);
+    @media screen and (max-width:540px) {
+      bottom: 50px;
+   }
     button {
       @include button-primary;
       width: 200px;

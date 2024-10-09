@@ -11,7 +11,7 @@ export default {
 
 <template>
   <section id="AboutMe" class="">
-    <div class="container h-100 pt-4 ">
+    <div class="container h-100 pt-4">
       <h1 class="text-center ">About<span> Me</span></h1>
       <div class="img-about">
         <img src="../assets/img/io-remove-bg.png" alt="" class=""/>

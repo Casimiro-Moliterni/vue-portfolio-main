@@ -105,7 +105,7 @@ export default {
 
 <template>
   <section id="Contact">
-    <div class="container-contact">
+    <div class="container-contact pt-4">
       <h1 class="heading text-center">Contact <span>Me !</span></h1>
       
       <div
@@ -203,7 +203,6 @@ export default {
 #Contact {
   min-height: 100vh;
   background-color: $primary_color;
-  padding-top: 60px;
   padding-bottom: 40px;
 .container-contact{
   padding: 0 10px;
@@ -215,7 +214,12 @@ export default {
     color: white;
     font-size: 56px;
     font-weight: 900;
-    margin-bottom: 30px;
+     margin-top: 70px;
+     margin-bottom: 40px;
+    @media screen and (max-width:540px) {
+      margin-bottom: 20px;
+      margin-top: 40px;
+   }
     span {
       color: $secondary_color;
     }
@@ -241,6 +245,9 @@ export default {
       @media screen and (max-width: 768px) {
         width: 100%;
       }
+      @media screen and (max-width:540px) {
+        margin: 0.2rem 0;
+   }
     }
   }
   textarea,
@@ -347,7 +354,7 @@ export default {
   }
 
   .error {
-    font-size: 1rem;
+    font-size: 13px;
     color: red;
     text-align: left;
   }
