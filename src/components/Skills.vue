@@ -149,11 +149,6 @@ export default {
   height: 100vh;
   background-color: $primary_color;
   color: white;
-  padding-top: 60px;
-  @media screen and (max-width: 700) {
-    height: 100vh;
-    max-height: 120vh;
-  }
   .container {
     padding: 20px 30px;
     height: 100%;
@@ -161,7 +156,12 @@ export default {
       text-align: center;
       font-size: 56px;
       font-weight: 900;
+      margin-top: 60px;
       margin-bottom: 70px;
+      @media screen and (max-width: 540px) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
       span {
         color: $secondary_color;
       }

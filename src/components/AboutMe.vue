@@ -39,14 +39,18 @@ export default {
 
 #AboutMe {
   background-color: #0E2C43;
-  padding-top: 70px;
   min-height: 100vh;
   padding-bottom: 30px;
   h1 {
     font-size: 56px;
     color: white;
     font-weight: 900;
+    margin-top: 70px;
     margin-bottom: 40px;
+    @media screen and (max-width:540px) {
+      margin-bottom: 20px;
+      margin-top: 40px;
+   }
     span {
       color: $secondary_color;
     }
@@ -62,6 +66,10 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width:540px) {
+    height: 15rem;
+    width: 15rem;
+   }
     .circle-spin{
       position: absolute;
       top: 50%;
@@ -112,4 +120,5 @@ export default {
         }
   }
 }
+
 </style>

@@ -90,7 +90,10 @@ export default {
   min-height: 100vh;
   background-color: #0e2c43;
   padding-top: 30px;
-
+  @media screen and (max-width: 540px) {
+    height: 100%;
+    border: 1px solid yellow;
+  }
   .container {
     padding: 40px 30px;
     height: 100%;

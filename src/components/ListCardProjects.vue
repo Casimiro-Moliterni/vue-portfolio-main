@@ -98,8 +98,8 @@ export default {
   height: 650px;
   /* border: 1px solid black; */
   @media screen and (max-width: 767px) {
-
-    align-items: center;
+    /* border: 1px solid yellow; */
+    height: 350px;
   }
   .swiper {
     height: 100%;
@@ -107,7 +107,7 @@ export default {
     box-sizing: border-box; /* Include padding e border nel calcolo altezza */
     @media screen and (max-width: 767px) {
 
-    height: 400px;
+    height: 100%;
   }
   
   }

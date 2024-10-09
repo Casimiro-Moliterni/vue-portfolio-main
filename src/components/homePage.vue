@@ -284,7 +284,7 @@ export default {
 
     @media screen and (max-width: 992px) {
       bottom: 20px;
-      width: 230px;
+      width: 250px;
     }
 
     &::before {
