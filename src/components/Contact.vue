@@ -366,7 +366,7 @@ export default {
       z-index: 2;
     }
     ul {
-      width: 200px;
+      width: 250px;
       display: flex;
       justify-content: space-between;
 

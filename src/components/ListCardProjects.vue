@@ -13,10 +13,6 @@
       :keyboard="{
         enabled: true,
       }"
-      :autoplay="{
-        delay: 3500,
-        disableOnInteraction: false,
-      }"
       :breakpoints="{
         340: {
           slidesPerView: 1,

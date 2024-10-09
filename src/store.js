@@ -52,6 +52,11 @@ export const store = reactive({
       url: "tel:3487037309",
       class: "fa-solid fa-phone",
     },
+    {
+      name: "mail",
+      url: "mailto:moliternicasimiro@hotmail.it",
+      class: "fa-regular fa-envelope",
+    },
   ],
   FrontEndArrayProjects: [],
   BackEndArrayProjects: [],

@@ -119,7 +119,7 @@ export default {
 #AppHome {
   background: #081b29;
   color: var(--text-color);
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: 100vh;
   display: flex;
   align-items: center;
@@ -280,7 +280,7 @@ export default {
   .home-social {
     position: absolute;
     bottom: 40px;
-    width: 230px;
+    width: 250px;
 
     @media screen and (max-width: 992px) {
       bottom: 20px;
