@@ -26,7 +26,7 @@ export default {
         Praesentium deserunt dicta deleniti voluptatibus reiciendis est, fugiat
         repellat quam, repudiandae ullam sequi!
       </p>
-      <div class="text-center ">
+      <div class="text-center btn-wrapper">
         <button class="">Contattami</button>
       </div>
     </div>
@@ -39,7 +39,7 @@ export default {
 
 #AboutMe {
   background-color: #0E2C43;
-  min-height: 100vh;
+  height: 100vh;
   padding-bottom: 30px;
   h1 {
     font-size: 56px;
@@ -104,20 +104,25 @@ export default {
     font-size: 16px;
     color: white;
   }
-  button {
-    @include button-primary;
-    height: 50px;
-    margin-top: 50px;
-    &::before {
-        @include button-primary-hover;
-        background-color: #0E2C43;
+  .btn-wrapper{
+
+    @media screen and (max-width:540px) {
+    /* border: 1px solid red; */
+  }
+    button {
+      @include button-primary;
+      height: 50px;  
+      &::before {
+          @include button-primary-hover;
+          background-color: #0E2C43;
+      }
+      &:hover::before {
+            width: 100%;
+          }
+          &:hover {
+            color: #00abf0;
+          }
     }
-    &:hover::before {
-          width: 100%;
-        }
-        &:hover {
-          color: #00abf0;
-        }
   }
 }
 
