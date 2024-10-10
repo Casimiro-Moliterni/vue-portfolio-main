@@ -58,11 +58,11 @@ export default {
     <div class="container pt-4">
       <h1>My <span>Skills</span></h1>
 
-      <div v-if="active">
+      <div v-if="active" class="container-component"  >
         <h3 class="title">Skills</h3>
         <div class="skill-box">
           <div class="skill-content">
-            <div class="wrapper-single-box row row-cols-1 row-cols-lg-2 g-2 g-md-0">
+            <div class="wrapper-single-box row row-cols-1 row-cols-lg-2  g-lg-3">
               <div v-for="skill in visibleSkills" :key="skill.id" class="col">
                 <div class="skill-progress">
                   <div class="bar">
@@ -86,7 +86,7 @@ export default {
         </div>
       </div>
 
-      <div v-else>
+      <div v-else class="container-component" >
         <SingleSkills></SingleSkills>
       </div>
       <div class="text-center  btn-box">
@@ -110,6 +110,16 @@ export default {
   .container {
     padding: 0 30px;
     height: 100%;
+
+    .container-component{
+           height: 500px;
+           @media screen and (max-width: 960px) {
+            height: 550px;
+      }
+           @media screen and (max-width: 540px) {
+            height: 450px;
+      }
+    }
     h1 {
       text-align: center;
       font-size: 56px;
@@ -136,15 +146,22 @@ export default {
       border: 0.2rem solid $secondary_color;
       border-radius: 0.6rem;
       /* padding: .8rem; */
-      height: 400px;
+      height: 450px;
       z-index: 3;
-      /* overflow: hidden;  */
+      overflow: hidden; 
+      @media screen and (max-width: 960px) {
+            height: 450px;
+      }
+      @media screen and (max-width: 540px) {
+            height: 400px;
+      }
       &::before {
         @include button-primary-hover;
         background-color: #0e2c43;
       }
       &:hover::before {
         width: 100%;
+        
       }
       &:hover {
         color: white;
@@ -169,7 +186,7 @@ export default {
 .col{
   height: 50px;
       @media screen and (max-width: 540px) {
-        height: 20px;
+     
       }
 
 }
@@ -210,10 +227,15 @@ export default {
     }
     button {
       @include button-primary;
-      width: 200px;
+      min-width: 200px;
       height: 50px;
+      text-wrap: nowrap;
       background-color: inherit;
       color: #00abf0;
+
+      @media screen and (max-width: 540px) {
+      width: 100%;
+    } 
       &::before {
         @include button-primary-hover;
         background-color: $secondary_color;

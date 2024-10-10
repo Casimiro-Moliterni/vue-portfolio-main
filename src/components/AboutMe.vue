@@ -1,11 +1,22 @@
 <script>
 import TextTyping from "./TextTyping.vue";
 
+
 export default {
   name: "AboutMe",
   components: {
-    TextTyping,
-  }
+    TextTyping
+  },
+  data() {
+    return {
+      activeModal: false,
+    };
+  },
+  methods: {
+    toggleModal() {
+      this.activeModal = !this.activeModal;
+    },
+  },
 };
 </script>
 
@@ -25,11 +36,19 @@ export default {
         quia soluta expedita molestiae voluptatum tempora aliquid quisquam?
         Praesentium deserunt dicta deleniti voluptatibus reiciendis est, fugiat
         repellat quam, repudiandae ullam sequi!
+        <button @click="toggleModal('attestato')">attestato</button>
+        <a href="../cv.pdf" download="cv.pdf" class="border rounded-pill p-1 text-primary border-primary bg-light">sono scarica curriculum bello</a>
+        <a href="../cv.pdf"  target="_blank"class="border rounded-pill p-1 text-primary border-primary bg-light" >cambia pagina</a>
       </p>
       <div class="text-center btn-wrapper">
         <button class="">Contattami</button>
       </div>
     </div>
+   <div class="modal-wrapper" :class="{active : activeModal === true}"  @click="toggleModal()">
+  <div class="modal-wrapper-img">
+    <img  src="../assets/img/certificato-boolean.png" alt="Attestato" />
+  </div>
+</div>
   </section>
 </template>
 
@@ -41,6 +60,7 @@ export default {
   background-color: #0E2C43;
   height: 100vh;
   padding-bottom: 30px;
+  position: relative;
   h1 {
     font-size: 56px;
     color: white;
@@ -123,6 +143,50 @@ export default {
             color: #00abf0;
           }
     }
+  }
+  .modal-wrapper{
+    position: fixed;
+    top:-100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.753);
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    transform: translateY(-100%);
+    opacity: 0;
+    &.active{
+     transition: .3s;
+     transform: translateY(100%);
+     opacity: 1;
+    }
+   .modal-wrapper-img{
+ 
+    width: 85%;
+    height: 70vh;
+    margin: 0 auto;
+    position: relative;
+         // Medium devices (tablets, 768px and up)
+         @media (min-width: 768px) {  }
+ 
+      // Large devices (desktops, 992px and up)
+          @media (min-width: 992px) {  }
+     
+     img{
+       max-width: 100%;
+       height: 100%;
+       width: 100%;
+       object-fit: contain;
+          // Medium devices (tablets, 768px and up)
+         @media (min-width: 768px) {  }
+ 
+      // Large devices (desktops, 992px and up)
+          @media (min-width: 992px) {  }
+     }
+   }
   }
 }
 
