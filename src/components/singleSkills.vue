@@ -53,7 +53,7 @@ export default defineComponent({
       :wrap-around="true"
       v-model="currentSlide"
     >
-      <Slide v-for="(slide, index) in store.allSkills" :key="index">
+      <Slide v-for="(slide, index) in store.allSkills()" :key="index">
         <div class="carousel__item">
           <h3>{{ slide.name }}</h3>
           <img :src="getImageUrl(`skills/${slide.path}`)" alt="" />
@@ -71,7 +71,7 @@ export default defineComponent({
       ref="carousel"
     >
       <!-- Mostra le miniature delle abilità. L'attributo key deve essere unico -->
-      <Slide v-for="(slide, index) in store.allSkills" :key="index" >
+      <Slide v-for="(slide, index) in store.allSkills()" :key="index" >
         <div class="carousel__item_bottom" @click="slideTo(index)"  :class="{ active : currentSlide === index }">
           <img :src="getImageUrl(`skills/${slide.path}`)" alt="" />
         </div>

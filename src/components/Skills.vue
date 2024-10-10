@@ -1,89 +1,54 @@
 <script>
-import { Carousel, Pagination, Slide } from "vue3-carousel";
-import "vue3-carousel/dist/carousel.css";
+import { ref, computed } from 'vue';
 import { store } from "../store.js";
 import SingleSkills from "./singleSkills.vue";
 
 export default {
   name: "Skills",
-  textBtn: "",
   components: {
-    Carousel,
-    Slide,
-    Pagination,
-    SingleSkills,
+    SingleSkills
   },
-  data() {
+  setup() {
+    const active = ref(false);
+    const currentIndex = ref(0);
+    const itemsPerPage = ref(6); // Numero di skill da mostrare per pagina
+
+    const textBtn = computed(() => active.value ? "SECTION SKILLS" : "FULL SKILLS");
+
+    const visibleSkills = computed(() => {
+      const start = currentIndex.value * itemsPerPage.value;
+      return store.SkillArray.slice(start, start + itemsPerPage.value);
+    });
+
+    const totalPages = computed(() => Math.ceil(store.SkillArray.length / itemsPerPage.value));
+
+    function toggleView() {
+      active.value = !active.value;
+    }
+
+    function nextPage() {
+      if (currentIndex.value < totalPages.value - 1) {
+        currentIndex.value++;
+      }
+    }
+
+    function prevPage() {
+      if (currentIndex.value > 0) {
+        currentIndex.value--;
+      }
+    }
+
     return {
       store,
-      active: false,
-      breakpoints: {
-        // 700px and up
-        500: {
-          itemsToShow: 1,
-        },
-        800: {
-          itemsToShow: 1.6,
-          autoplay: 4000,
-          pauseAutoplayOnHover: true,
-        },
-        // 1024 and up
-        1024: {
-          itemsToShow: 2.5,
-          autoplay: 4000,
-          pauseAutoplayOnHover: true,
-        },
-        // 1024 and up
-        1425: {
-          itemsToShow: 3,
-          // autoplay:4000,
-          // pauseAutoplayOnHover: true,
-        },
-      },
+      active,
+      textBtn,
+      visibleSkills,
+      currentIndex,
+      totalPages,
+      toggleView,
+      nextPage,
+      prevPage,
     };
-  },
-  methods: {
-    formatCategoryName(categoryName) {
-      // Formatta il nome della categoria in modo leggibile
-      return categoryName.replace(/([A-Z])/g, " $1").trim();
-    },
-
-    GenerateFullSkill() {
-      this.active = !this.active;
-      this.textBtn = "FULL SKILLS";
-      if (!this.active) {
-        this.textBtn = "SECTION SKILLS";
-      }
-    },
-
-    addDynamicStyles() {
-      const styles = document.createElement("style");
-      const skills = this.store.skills;
-
-      for (const category in skills) {
-        skills[category].forEach((skill) => {
-          const keyframes = this.createKeyframes(skill.range);
-          styles.innerHTML += keyframes; // Aggiungi keyframes dinamici
-        });
-      }
-
-      document.head.appendChild(styles); // Aggiungi gli stili al documento
-    },
-
-    createKeyframes(range) {
-      const percentage = parseInt(range);
-      return `
-        @keyframes progress-${percentage} {
-          0% { width: 0; }
-          100% { width: ${percentage}%; }
-            0% { width: 0; } 
-        }
-      `;
-    },
-  },
-  mounted() {
-    this.GenerateFullSkill();
-    this.addDynamicStyles();
   },
 };
 </script>
@@ -92,52 +57,41 @@ export default {
   <section id="Skills" class="position-relative">
     <div class="container pt-4">
       <h1>My <span>Skills</span></h1>
-      <Carousel
-        :wrapAround="true"
-        :transition="500"
-        :breakpoints="breakpoints"
-        v-if="active"
-      >
-        <Slide
-          v-for="(skillsArray, categoryName) in store.skills"
-          :key="categoryName"
-        >
-          <div
-            class="carousel__item"
-            :class="{
-              item_FrontEndSkill: categoryName === 'FrontEndSkill',
-              item_BackEndSkill: categoryName === 'BackEndSkill',
-              item_ProfessionalSkill: categoryName === 'ProfessionalSkill',
-            }"
-          >
-            <h3 class="title">{{ formatCategoryName(categoryName) }}</h3>
-            <div class="skill-box skill-content">
-              <div
-                v-for="(singleSkill, skillIndex) in skillsArray"
-                :key="skillIndex"
-              >
-                <div class="skill-progress w-100">
-                  <h3>
-                    {{ singleSkill.name }} <span>{{ singleSkill.range }}</span>
-                  </h3>
+
+      <div v-if="active">
+        <h3 class="title">My Skills</h3>
+        <div class="skill-box">
+          <div class="skill-content">
+            <div class="wrapper-single-box row row-cols-2">
+              <div v-for="skill in visibleSkills" :key="skill.id" class="col">
+                <div class="skill-progress">
                   <div class="bar">
-                    <span  :style="{ 
-      width: singleSkill.range,
-      animation: `progress-${parseInt(singleSkill.range)} 3s ease-in-out infinite`
-    }"></span>
+                    <h3>{{ skill.name }}</h3>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </Slide>
-      </Carousel>
-      <div v-if="!active">
+
+          <div class="btn-page-wrapper">
+            <button @click="prevPage" :disabled="currentIndex === 0" class="Prev btn">
+              <i class="fa-solid fa-angle-left"></i>
+            </button>
+            <button @click="nextPage" :disabled="currentIndex === totalPages - 1" class=" Next btn">
+              <i class="fa-solid fa-angle-right"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <div v-else>
         <SingleSkills></SingleSkills>
       </div>
     </div>
+
     <div class="text-center mt-5 position-absolute btn-box">
-      <button @click="GenerateFullSkill()">{{ textBtn }}</button>
+      <button @click="toggleView">{{ textBtn }}</button>
     </div>
   </section>
 </template>
@@ -149,9 +103,9 @@ export default {
   height: 100vh;
   background-color: $primary_color;
   color: white;
-  @media screen and (max-width:540px) {
+  @media screen and (max-width: 540px) {
     height: 105vh;
-   }
+  }
   .container {
     padding: 0 30px;
     height: 100%;
@@ -160,11 +114,11 @@ export default {
       font-size: 56px;
       font-weight: 900;
       margin-top: 70px;
-    margin-bottom: 40px;
-    @media screen and (max-width:540px) {
-      margin-bottom: 20px;
-      margin-top: 40px;
-   }
+      margin-bottom: 40px;
+      @media screen and (max-width: 540px) {
+        margin-bottom: 20px;
+        margin-top: 40px;
+      }
       span {
         color: $secondary_color;
       }
@@ -179,10 +133,10 @@ export default {
       position: relative;
       border: 0.2rem solid $secondary_color;
       border-radius: 0.6rem;
-      padding: 0.5rem 1rem;
+      /* padding: .8rem; */
       height: 400px;
       z-index: 3;
-      overflow: hidden; /* Nascondi l'overflow per evitare la visualizzazione del contenuto che esce dal contenitore */
+      /* overflow: hidden;  */
       &::before {
         @include button-primary-hover;
         background-color: #0e2c43;
@@ -203,46 +157,24 @@ export default {
       }
     }
   }
-  .skill-progress {
-    padding: 1rem 0;
-    animation: mymove 2s infinite;
-    animation: paused;
-    /* Quando il mouse passa sopra il contenitore delle skill */
-    &.item_ProfessionalSkill .skill-progress {
-      animation: paused;
-      @keyframes scroll {
-        0% {
-          transform: translateY(0); /* Inizio nella posizione originale */
-        }
-        100% {
-          transform: translateY(-150%); /* Sposta il contenuto verso l'alto */
-        }
-      }
-    }
+.skill-content{
+  height: 85%;
+  padding: .8rem;
+}
+.wrapper-single-box{
+  transition: .5s;
+  height: 100%;
+}
+.col{
+  height: 50px;
 
-    .item_BackEndSkill {
-      @keyframes scroll {
-        0% {
-          transform: translateY(0); /* Inizio nella posizione originale */
-        }
-        100% {
-          transform: translateY(-150%); /* Sposta il contenuto verso l'alto */
-        }
-      }
-    }
-    .item_FrontEndSkill .skill-progress {
-      @keyframes scroll {
-        0% {
-          transform: translateY(0); /* Inizio nella posizione originale */
-        }
-        100% {
-          transform: translateY(-750px); /* Sposta il contenuto verso l'alto */
-        }
-      }
-    }
+}
+  .skill-progress {
+    position: relative;
+    z-index: 20;
     @media screen and (max-width: 700px) {
-      width: 80%;
-      margin: 0 auto;
+      /* width: 80%;
+      margin: 0 auto; */
     }
     h3 {
       font-size: 1rem;
@@ -255,30 +187,23 @@ export default {
     }
   }
   .bar {
-    height: 2.5rem;
+
     border-radius: 0.6rem;
     border: 0.2rem solid $secondary_color;
     padding: 0.5rem;
-    margin: 1rem 0;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-    transition: width 0.5s ease-in-out; /* Animazione per il cambiamento di larghezza */
-    span {
-      height: 100%;
-      display: block;
-      border-radius: 0.3rem;
-      background-color: $secondary_color;
-    }
   }
+  
   .btn-box {
     position: absolute;
     bottom: 40px;
     left: 50%;
     transform: translate(-50%);
-    @media screen and (max-width:540px) {
+    @media screen and (max-width: 540px) {
       bottom: 50px;
-   }
+    }
     button {
       @include button-primary;
       width: 200px;
@@ -297,51 +222,36 @@ export default {
       }
     }
   }
+
 }
-/* carosello */
-.carousel__slide {
-  padding: 5px;
-}
-.carousel__item {
-  /* background-color: red; */
-  padding: 10px;
-  height: 500px;
-  width: 100%;
+.btn-page-wrapper{
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
+  margin: 0 auto;
+   .btn{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 1.5rem;
+   width: 40px;
+   height: 40px;
+   border-radius: 100%;
+   overflow: hidden;
+   background-color: $secondary_color;
+    padding: 0.5rem 1rem;
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    &.Prev{
+  
+    }
+    &.Next{
+
+    }
+  }
 }
 
-.carousel__viewport {
-  perspective: 2000px;
-}
 
-.carousel__track {
-  transform-style: preserve-3d;
-}
-
-.carousel__slide--sliding {
-  transition: 0.5s;
-}
-
-.carousel__slide {
-  opacity: 0.9;
-  transform: rotateY(-20deg) scale(0.9);
-}
-
-.carousel__slide--active ~ .carousel__slide {
-  transform: rotateY(20deg) scale(0.9);
-}
-
-.carousel__slide--prev {
-  opacity: 1;
-  transform: rotateY(-10deg) scale(0.95);
-}
-
-.carousel__slide--next {
-  opacity: 1;
-  transform: rotateY(10deg) scale(0.95);
-}
-
-.carousel__slide--active {
-  opacity: 1;
-  transform: rotateY(0) scale(1.1);
-}
 </style>
