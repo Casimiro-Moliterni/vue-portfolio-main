@@ -91,7 +91,6 @@ export default {
   background-color: #0e2c43;
   @media screen and (max-width: 540px) {
     height: 100%;
-    border: 1px solid yellow;
   }
   .container {
     padding: 0 30px;
