@@ -110,6 +110,7 @@ export default defineComponent({
   width: 100%;
   background-color: rgba(0, 0, 0, 0.178);
   margin: 5px;
+  margin-bottom: 0;
   border-radius: 8px;
   padding: 10px;
   display: flex;

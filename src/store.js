@@ -21,13 +21,13 @@ export const store = reactive({
       { name: "LARAVEL", range: "80%", path: "laravel.png" },
       { name: "MYSQL", range: "70%", path: "mysql.png" },
       { name: "NPM", range: "70%", path: "npm.png" },
-    ],
-
-    ProfessionalSkill: [
       { name: "Web Development", range: "75%", path: "develop.png" },
       { name: "Problem Solving", range: "70%", path: "problemsolving.png" },
       { name: "Responsive Web App", range: "80%", path: "responsive.png" },
       { name: "Team Work", range: "80%", path: "teamwork.png" },
+    ],
+
+    ProfessionalSkill: [
     ],
   social: [
     {

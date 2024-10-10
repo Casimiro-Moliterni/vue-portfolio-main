@@ -59,10 +59,10 @@ export default {
       <h1>My <span>Skills</span></h1>
 
       <div v-if="active">
-        <h3 class="title">My Skills</h3>
+        <h3 class="title">Skills</h3>
         <div class="skill-box">
           <div class="skill-content">
-            <div class="wrapper-single-box row row-cols-2">
+            <div class="wrapper-single-box row row-cols-1 row-cols-lg-2 g-2 g-md-0">
               <div v-for="skill in visibleSkills" :key="skill.id" class="col">
                 <div class="skill-progress">
                   <div class="bar">
@@ -88,11 +88,11 @@ export default {
       <div v-else>
         <SingleSkills></SingleSkills>
       </div>
+      <div class="text-center  btn-box">
+        <button @click="toggleView">{{ textBtn }}</button>
+      </div>
     </div>
 
-    <div class="text-center mt-5 position-absolute btn-box">
-      <button @click="toggleView">{{ textBtn }}</button>
-    </div>
   </section>
 </template>
 <style scoped lang="scss">
@@ -125,8 +125,9 @@ export default {
     }
 
     .title {
-      font-size: 2rem;
-      margin: 0 0 1.5rem;
+      font-size: 1.7rem;
+      margin: 0 0 1rem;
+      text-align: center;
     }
 
     .skill-box {
@@ -152,7 +153,6 @@ export default {
         animation: scroll 8s linear infinite; /* Attiva l'animazione */
       }
       @media screen and (max-width: 1024px) {
-        width: 97%;
         margin: 0 auto;
       }
     }
@@ -167,6 +167,9 @@ export default {
 }
 .col{
   height: 50px;
+      @media screen and (max-width: 540px) {
+        height: 20px;
+      }
 
 }
   .skill-progress {
@@ -194,15 +197,15 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 540px) {
+        height: 45px;
+      }
   }
   
   .btn-box {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translate(-50%);
+  
+    margin-top: 40px;
     @media screen and (max-width: 540px) {
-      bottom: 50px;
     }
     button {
       @include button-primary;
