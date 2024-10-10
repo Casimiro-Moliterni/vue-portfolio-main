@@ -77,6 +77,7 @@ export default {
             <button @click="prevPage" :disabled="currentIndex === 0" class="Prev btn">
               <i class="fa-solid fa-angle-left"></i>
             </button>
+            <span>{{ currentIndex + 1 }} / {{ totalPages }}</span>
             <button @click="nextPage" :disabled="currentIndex === totalPages - 1" class=" Next btn">
               <i class="fa-solid fa-angle-right"></i>
             </button>
@@ -229,8 +230,8 @@ export default {
 }
 .btn-page-wrapper{
   display: flex;
-  width: 100px;
-  justify-content: space-between;
+  width: 130px;
+  justify-content: space-between;align-items: center;
   margin: 0 auto;
    .btn{
    display: flex;
