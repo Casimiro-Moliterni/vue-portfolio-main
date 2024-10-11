@@ -4,7 +4,33 @@ import { reactive } from "vue";
 export const store = reactive({
   // codice da scrivere ....
   // Definisci `allSkills` come una computed property reattiva
-  AllSkillArray:[],
+
+  apiUrl: 'http://127.0.0.1:8000',
+  
+  myGenerality:[
+    {
+      name:'Casimiro Moliterni',
+      class:'fa-solid fa-user',
+      label:'FULL NAME'
+    },
+    {
+      name:'Pontecagnano Faiano , SA 84098',
+      class:'fa-solid fa-location-dot',
+      label:'ADDRESS'
+    },
+    {
+      name:'349 703 7309',
+      class:'fa-solid fa-phone',
+      label:'TELEFONO'
+    },
+    {
+      name:'moliternicasimiro@hotmail.it',
+      class:'fa-solid fa-envelope',
+      label:'MAIL'
+    },
+
+  ],
+
     allSkills() {
     return this.AllSkillArray= [...this.SkillArray , ...this.ProfessionalSkill];
   },
@@ -82,7 +108,38 @@ export const store = reactive({
 ],
 
 
-
+linksNavbar: [
+  {
+    name: "Casimiro.",
+    label: "home",
+    href:'#AppHome'
+  },
+  {
+    name: "Home",
+    label: "home",
+     href:'#AppHome'
+  },
+  {
+    name: "About",
+    label: "about",
+    href:'#AboutMe'
+  },
+  {
+    name: "Skills",
+    label: "skills",
+     href:'#Skills'
+  },
+  {
+    name: "Projects",
+    label: "projects",
+     href:'#Projects'
+  },
+  {
+    name: "Contact",
+    label: "contact",
+     href:'#Contact'
+  },
+],
   // funzioni ////////////////////////////////
 
   ActiveLInk() {

@@ -87,7 +87,7 @@ export default {
 @use "../style/partials/mixins" as *;
 
 #Projects {
-  height: 100vh;
+  min-height: 100vh;
   background-color: #0e2c43;
   @media screen and (max-width: 540px) {
     padding-bottom: 40px;

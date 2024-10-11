@@ -4,6 +4,8 @@ import Contact from "../components/Contact.vue";
 import HomePage from "../components/homePage.vue";
 import Projects from "../components/Projects.vue";
 import Skills from "../components/Skills.vue";
+import Headers from "../components/Headers.vue";
+import Footer from "../components/footer.vue";
 
 
 export default {
@@ -13,7 +15,9 @@ export default {
     AboutMe,
     Skills,
     Projects,
-    Contact
+    Contact,
+    Headers,
+    Footer
   },
   data() {
     return {
@@ -23,7 +27,7 @@ export default {
 };
 </script>
 <template>
-
+ <Headers ></Headers>
   <main>
     <HomePage ></HomePage>
     <AboutMe></AboutMe>
@@ -31,6 +35,7 @@ export default {
     <Projects ></Projects>
     <Contact></Contact>
   </main>
+  <Footer></Footer>
 </template>
 
 <style scoped lang="scss">

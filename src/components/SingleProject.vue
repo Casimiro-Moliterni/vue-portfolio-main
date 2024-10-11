@@ -34,6 +34,7 @@ export default {
       <div class="info">
         <h3>{{ project.name }}</h3>
         <button class="btn-arrow">
+          <!-- <router-link :to="{ name:'single-project',params:{slug:project.slug}}" :projectInfo="project">  <i class="fa-solid fa-arrow-up"></i></router-link> -->
           <i class="fa-solid fa-arrow-up"></i>
         </button>
         <div class="box-btn">

@@ -1,43 +1,13 @@
 <script>
 import { RouterLink } from 'vue-router';
+import { store } from '../store';
 
 export default {
   name: "Headers",
   data() {
     return {
       active:1,
-      links: [
-        {
-          name: "Casimiro.",
-          label: "home",
-          href:'#AppHome'
-        },
-        {
-          name: "Home",
-          label: "home",
-           href:'#AppHome'
-        },
-        {
-          name: "About",
-          label: "about",
-          href:'#AboutMe'
-        },
-        {
-          name: "Skills",
-          label: "skills",
-           href:'#Skills'
-        },
-        {
-          name: "Projects",
-          label: "projects",
-           href:'#Projects'
-        },
-        {
-          name: "Contact",
-          label: "contact",
-           href:'#Contact'
-        },
-      ],
+      store
     };
   },methods:{
     linkActive(index){
@@ -50,12 +20,12 @@ export default {
 <template >
   <header class="py-2 pt-1 pt-lg-4  ">
     <nav class="d-flex my-container justify-content-between">
-      <a class="logo " :href="links[0].href" >{{ links[0].name }}</a> 
+      <a class="logo " :href="store.linksNavbar[0].href" >{{ store.linksNavbar[0].name }}</a> 
       <div class="wrapper-bars">
         <button class="bars"><i class="fa-solid fa-bars"></i></button>
       </div>
       <ul class="">
-        <template v-for="link,index in links">
+        <template v-for="link,index in store.linksNavbar">
           <li v-if="link.name !== 'Casimiro.'" :class="{ 'flex-grow-1 logo': link.name === 'Casimiro', 'links' : link.name !== 'Casimiro' }" >
            <a  :href="link.href" class="link" @click="linkActive(index)" :class="{active : index === active}">{{ link.name }}</a> 
           </li>

@@ -2,10 +2,12 @@
 import Headers from './components/Headers.vue';
 import { store } from './store';
 import { toggle } from './scroll_section.js'
+import Footer from './components/footer.vue';
 export default{
     components:{
         Headers,
-        store
+        store,
+        Footer
     },
     data(){
         return{
@@ -23,7 +25,6 @@ export default{
 </script>
 
 <template>
- <Headers ></Headers>
  <router-view></router-view>
 </template>
 
