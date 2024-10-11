@@ -45,7 +45,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div>
+  <div class="container-single-skill">
     <!-- Carosello principale che mostra le informazioni delle abilità -->
     <Carousel
       id="gallery"
@@ -84,6 +84,17 @@ export default defineComponent({
 <style scoped lang="scss">
 @use "../style/partials/variables" as *;
 @use "../style/partials/mixins" as *;
+
+.container-single-skill{
+width: 100%;
+margin: 0 auto;
+@media (min-width: 1400px) {
+  width: 70rem;
+ margin: 0 auto;
+
+}
+
+}
 .carousel__item {
   padding: 20px;
   width: 100%;
