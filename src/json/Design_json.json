@@ -34,6 +34,10 @@
               {
                 "name": "CSS",
                 "path": "css.png"
+              },
+              {
+                "name": "Bootstrap",
+                "path": "bootstrap.png"
               }
         ],
         "albums": [

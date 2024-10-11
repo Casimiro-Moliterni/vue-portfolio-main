@@ -105,89 +105,91 @@ export default {
 
 <template>
   <section id="Contact">
-    <div class="container-contact pt-4">
-      <h1 class="heading text-center">Contact <span>Me !</span></h1>
-      
-      <div
-          class="home-social"
-        >
-          <ul class="ps-0 mb-0 ">
-            <template v-for="link in store.social">
-              <li>
-                <a class="" v-bind:href="link.url" target="_blank">
-                  <i :class="link.class"></i>
-                </a>
-              </li>
-            </template>
-          </ul>
-        </div>
-
-      <form @submit.prevent="checkForm" id="formContact">
-        <div class="input-box">
-          <div class="input-field">
-            <input
-              type="text"
-              placeholder="Full Name"
-              v-model="name"
-              id="FullName"
-            />
-            <span class="focus"></span>
-            <div class="error">{{ fieldErrors.name }}</div> <!-- Errore specifico del campo nome -->
+    <div class="my-container">
+      <div class="container-contact pt-4">
+        <h1 class="heading text-center">Contact <span>Me !</span></h1>
+        
+        <div
+            class="home-social"
+          >
+            <ul class="ps-0 mb-0 ">
+              <template v-for="link in store.social">
+                <li>
+                  <a class="" v-bind:href="link.url" target="_blank">
+                    <i :class="link.class"></i>
+                  </a>
+                </li>
+              </template>
+            </ul>
           </div>
-
-          <div class="input-field">
-            <input
-              type="number"
-              placeholder="Mobile Number"
-              id="MobileNumber"
-              v-model="mobileNumber"
-            />
-            <span class="focus"></span>
-            <div class="error">{{ fieldErrors.mobileNumber }}</div> <!-- Errore specifico del campo numero di telefono -->
+  
+        <form @submit.prevent="checkForm" id="formContact">
+          <div class="input-box">
+            <div class="input-field">
+              <input
+                type="text"
+                placeholder="Full Name"
+                v-model="name"
+                id="FullName"
+              />
+              <span class="focus"></span>
+              <div class="error">{{ fieldErrors.name }}</div> <!-- Errore specifico del campo nome -->
+            </div>
+  
+            <div class="input-field">
+              <input
+                type="number"
+                placeholder="Mobile Number"
+                id="MobileNumber"
+                v-model="mobileNumber"
+              />
+              <span class="focus"></span>
+              <div class="error">{{ fieldErrors.mobileNumber }}</div> <!-- Errore specifico del campo numero di telefono -->
+            </div>
           </div>
-        </div>
-
-        <div class="input-box">
-          <div class="input-field w-100">
-            <input
-              type="email"
-              placeholder="Email Address"
-              v-model="email"
-              class="w-100"
-              id="Email"
-            />
-            <span class="focus"></span>
-            <div class="error">{{ fieldErrors.email }}</div> <!-- Errore specifico del campo email -->
+  
+          <div class="input-box">
+            <div class="input-field w-100">
+              <input
+                type="email"
+                placeholder="Email Address"
+                v-model="email"
+                class="w-100"
+                id="Email"
+              />
+              <span class="focus"></span>
+              <div class="error">{{ fieldErrors.email }}</div> <!-- Errore specifico del campo email -->
+            </div>
           </div>
-        </div>
-
-        <div class="textarea-field">
-          <textarea
-            id="description"
-            cols="30"
-            rows="10"
-            placeholder="Your Message"
-            v-model="message"
-          ></textarea>
-          <span class="focus"></span>
-          <div class="error">{{ fieldErrors.message }}</div> <!-- Errore specifico del campo messaggio -->
-        </div>
-
-        <div class="wrapper-checkbox text-start">
-          <input type="checkbox" id="privacy" v-model="privacyChecked" />
-          <span for="privacy">By submitting the form, you agree to our 
-            <span><a href="">privacy policy</a></span> and
-            <span><a href="">terms and conditions</a></span>
-          </span>
-          <div class="error ">{{ fieldErrors.privacyChecked }}</div> <!-- Errore specifico per la privacy policy -->
-        </div>
-
-        <div class="btn-box btns">
-          <button type="submit" class="btn">
-            Submit
-          </button>
-        </div>
-      </form>
+  
+          <div class="textarea-field">
+            <textarea
+              id="description"
+              cols="30"
+              rows="10"
+              placeholder="Your Message"
+              v-model="message"
+            ></textarea>
+            <span class="focus"></span>
+            <div class="error">{{ fieldErrors.message }}</div> <!-- Errore specifico del campo messaggio -->
+          </div>
+  
+          <div class="wrapper-checkbox text-start">
+            <input type="checkbox" id="privacy" v-model="privacyChecked" />
+            <span for="privacy">By submitting the form, you agree to our 
+              <span><a href="">privacy policy</a></span> and
+              <span><a href="">terms and conditions</a></span>
+            </span>
+            <div class="error ">{{ fieldErrors.privacyChecked }}</div> <!-- Errore specifico per la privacy policy -->
+          </div>
+  
+          <div class="btn-box btns">
+            <button type="submit" class="btn">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <div class="message" :class="{active : statusMessage , delayMessage : classMessageSendForm}">
@@ -205,14 +207,14 @@ export default {
   background-color: $primary_color;
   padding-bottom: 40px;
 .container-contact{
-  padding: 0 10px;
+  /* padding: 0 10px; */
   max-width: 70rem;
   margin: 0 auto;
 }
   h1 {
     text-align: center;
     color: white;
-    font-size: 56px;
+    font-size: 50px;
     font-weight: 900;
      margin-top: 70px;
      margin-bottom: 40px;

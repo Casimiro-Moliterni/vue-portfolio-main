@@ -69,19 +69,20 @@ export default {
 .container-text {
   min-height: 50px;
   position: relative;
-  &::before {
-    @include animation-showRight;
-    animation-delay: 1.3s;
-  }
   @media screen and (max-width:992px) {
   
         justify-content: center;
     }
 }
 .typed-text {
-  font-size: 32px;
+  
+  font-size: 26px;
   font-weight: 700;
   color: #00abf0;
+
+  @media (min-width: 576px) {
+    font-size: 32px;
+}
 }
 
 span.cursor {

@@ -33,13 +33,12 @@ export default {
       />
       <div class="info">
         <h3>{{ project.name }}</h3>
-        <p>breve descrizione</p>
         <button class="btn-arrow">
           <i class="fa-solid fa-arrow-up"></i>
         </button>
         <div class="box-btn">
           <h6 class="text-center">TECHNOLOGIES</h6>
-          <div class="wrapper">
+          <div class="wrapper row">
             <button v-for="btn in project.technologies"   :style="{ backgroundImage: `url(${getImageUrl(`skills/${btn.path}`)})` }">
               <!-- ricorda inserisci style dinamico backgroundimage  -->
               <p>{{ btn.name }}</p>
@@ -69,11 +68,12 @@ export default {
   h3 {
     color: black;
     font-weight: 900;
+    margin-top: 70px;
   }
   &:hover {
     /* transform: scale(1.05); */
-    transform: translateY(-20px);
-    transform: translatex(-10px);
+    transform: translateY(-5px);
+    transform: translatex(-5px);
     &:before {
       opacity: 1;
     }
@@ -81,6 +81,10 @@ export default {
     .info {
       opacity: 1;
       transform: translateY(0px);
+    }
+
+    &:hover img{
+      opacity: 0.8;
     }
   }
 
@@ -155,7 +159,6 @@ export default {
       .wrapper {
         width: 100%;
         height: 100%;
-        display: flex;
         justify-content: center;
         gap: 1rem;
         & > button {
@@ -229,8 +232,8 @@ export default {
     }
 
     .btn-arrow {
-      height: 4rem;
-      width: 4rem;
+      height: 3rem;
+      width: 3rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -247,9 +250,9 @@ export default {
       right: 10px;
       transition: 0.5s;
       &:hover i {
-        transform: scale(1.2) rotate(45deg);
+        /* transform: scale(1.2) rotate(45deg);
         transition: 0.5s;
-        position: absolute;
+        position: absolute; */
       }
       i {
         font-size: 2.5rem;
@@ -261,8 +264,7 @@ export default {
         /* transform: rotate(45deg); */
       }
       &:hover {
-        transform: scale(1.08) rotate(45deg);
-        transition: 0.5s;
+        transform: rotate(45deg);
         transition: 0.5s;
         color: $secondary_color;
       }

@@ -22,7 +22,7 @@ export default {
 
 <template>
   <section id="AboutMe" class="">
-    <div class="container h-100 pt-4">
+    <div class="my-container h-100 pt-4">
       <h1 class="text-center ">About<span> Me</span></h1>
       <div class="img-about">
         <img src="../assets/img/io-remove-bg.png" alt="" class=""/>
@@ -44,8 +44,11 @@ export default {
         <button class="">Contattami</button>
       </div>
     </div>
-   <div class="modal-wrapper" :class="{active : activeModal === true}"  @click="toggleModal()">
-  <div class="modal-wrapper-img">
+   <div class="modal-wrapper" :class="{active : activeModal === true}">
+    <button class="btn-close-modal"  @click="toggleModal()">
+      <i class="fa-regular fa-rectangle-xmark"></i>
+    </button>
+    <div class="modal-wrapper-img">
     <img  src="../assets/img/certificato-boolean.png" alt="Attestato" />
   </div>
 </div>
@@ -62,7 +65,7 @@ export default {
   padding-bottom: 30px;
   position: relative;
   h1 {
-    font-size: 56px;
+    font-size: 50px;
     color: white;
     font-weight: 900;
     margin-top: 70px;
@@ -158,6 +161,22 @@ export default {
     transition: .3s;
     transform: translateY(-100%);
     opacity: 0;
+
+    .btn-close-modal{
+      position: absolute;
+      top: 3%;
+      right:3%;
+      border: none;
+      font-size: 2rem;
+      background-color: inherit;
+      color: white;
+      transition: .5s;
+
+      &:hover{
+        transition: .5s;
+        color: #00abf0;
+      }
+     }
     &.active{
      transition: .3s;
      transform: translateY(100%);
@@ -186,6 +205,7 @@ export default {
       // Large devices (desktops, 992px and up)
           @media (min-width: 992px) {  }
      }
+
    }
   }
 }

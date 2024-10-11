@@ -28,7 +28,7 @@ export default {
 </script>
 <template>
   <section id="AppHome" class="pages">
-    <div class="container">
+    <div class="my-container">
       <div
         class="row flex-lg-wrap justify-content-lg-between justify-content-center"
       >
@@ -99,6 +99,12 @@ export default {
   color: #ffffff;
   animation: waviy 1.5s infinite;
   animation-delay: calc(0.1s * var(--i));
+  font-size: 36px;
+
+  
+  @media (min-width: 576px) {
+    font-size: 42px;
+}
 }
 @keyframes waviy {
   0%,

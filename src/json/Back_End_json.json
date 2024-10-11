@@ -16,6 +16,18 @@
           {
             "name": "Javascript",
             "path": "javascript.png"
+          },
+          {
+            "name": "SASS",
+            "path": "sass.png"
+          },
+          {
+            "name": "Bootstrap",
+            "path": "bootstrap.png"
+          },
+          {
+            "name": "HTML",
+            "path": "html.png"
           }
         ],
         "albums": [
@@ -42,6 +54,18 @@
               {
                 "name": "Javascript",
                 "path": "javascript.png"
+              },
+              {
+                "name": "CSS",
+                "path": "css.png"
+              },
+              {
+                "name": "Bootstrap",
+                "path": "bootstrap.png"
+              },
+              {
+                "name": "HTML",
+                "path": "html.png"
               }
         ],
         "albums": [
@@ -68,6 +92,14 @@
               {
                 "name": "Javascript",
                 "path": "javascript.png"
+              },
+              {
+                "name": "Bootstrap",
+                "path": "bootstrap.png"
+              },
+              {
+                "name": "HTML",
+                "path": "html.png"
               }
         ],
         "albums": [
@@ -90,6 +122,14 @@
               {
                 "name": "Javascript",
                 "path": "javascript.png"
+              },
+              {
+                "name": "HTML",
+                "path": "html.png"
+              },
+              {
+                "name": "CSS",
+                "path": "css.png"
               }
         ],
         "albums": [

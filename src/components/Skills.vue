@@ -55,10 +55,10 @@ export default {
 
 <template>
   <section id="Skills" class="position-relative">
-    <div class="container pt-4">
+    <div class="my-container pt-4">
       <h1>My <span>Skills</span></h1>
 
-      <div v-if="active" class="container-component"  >
+      <div v-if="active" class="my-container-component"  >
         <h3 class="title">Skills</h3>
         <div class="skill-box">
           <div class="skill-content">
@@ -86,7 +86,7 @@ export default {
         </div>
       </div>
 
-      <div v-else class="container-component" >
+      <div v-else class="my-container-component" >
         <SingleSkills></SingleSkills>
       </div>
       <div class="text-center  btn-box">
@@ -107,11 +107,11 @@ export default {
   @media screen and (max-width: 540px) {
     height: 105vh;
   }
-  .container {
+  .my-container {
     padding: 0 30px;
     height: 100%;
 
-    .container-component{
+    .my-container-component{
            height: 500px;
            @media screen and (max-width: 960px) {
             height: 550px;
@@ -122,7 +122,7 @@ export default {
     }
     h1 {
       text-align: center;
-      font-size: 56px;
+      font-size: 50px;
       font-weight: 900;
       margin-top: 70px;
       margin-bottom: 40px;
@@ -147,13 +147,19 @@ export default {
       border-radius: 0.6rem;
       /* padding: .8rem; */
       height: 450px;
+      width: 70rem;
+      margin:0 auto ;
       z-index: 3;
       overflow: hidden; 
       @media screen and (max-width: 960px) {
             height: 450px;
+            width: 90%;
+            margin:0 auto 
       }
       @media screen and (max-width: 540px) {
             height: 400px;
+            width: 100%;
+            margin:0 auto ;
       }
       &::before {
         @include button-primary-hover;

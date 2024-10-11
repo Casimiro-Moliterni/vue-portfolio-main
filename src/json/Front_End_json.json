@@ -8,6 +8,18 @@
         {
           "name": "VUE Js",
           "path": "vue.png"
+        },
+        {
+          "name": "Javascript",
+          "path": "javascript.png"
+        },
+        {
+          "name": "HTML",
+          "path": "html.png"
+        },
+        {
+          "name": "SCSS",
+          "path": "sass.png"
         }
       ],
       "albums": [
@@ -26,6 +38,18 @@
         {
           "name": "VUE Js",
           "path": "vue.png"
+        },
+        {
+          "name": "Javascript",
+          "path": "javascript.png"
+        },
+        {
+          "name": "HTML",
+          "path": "html.png"
+        },
+        {
+          "name": "SCSS",
+          "path": "sass.png"
         }
       ],
       "albums": [
@@ -44,6 +68,18 @@
         {
           "name": "VUE Js",
           "path": "vue.png"
+        },
+        {
+          "name": "Javascript",
+          "path": "javascript.png"
+        },
+        {
+          "name": "HTML",
+          "path": "html.png"
+        },
+        {
+          "name": "SCSS",
+          "path": "sass.png"
         }
       ],
       "albums": [
@@ -60,8 +96,16 @@
       "poster": "vue-slider.png",
       "technologies": [
         {
-          "name": "VUE Js",
-          "path": "vue.png"
+          "name": "Javascript",
+          "path": "javascript.png"
+        },
+        {
+          "name": "HTML",
+          "path": "html.png"
+        },
+        {
+          "name": "CSS",
+          "path": "css.png"
         }
       ],
       "albums": [
@@ -78,8 +122,16 @@
       "poster": "vue_boolzapp_poster.png",
       "technologies": [
         {
-          "name": "VUE Js",
-          "path": "vue.png"
+          "name": "Javascript",
+          "path": "javascript.png"
+        },
+        {
+          "name": "HTML",
+          "path": "html.png"
+        },
+        {
+          "name": "CSS",
+          "path": "css.png"
         }
       ],
       "albums": [
@@ -98,6 +150,18 @@
         {
           "name": "VUE Js",
           "path": "vue.png"
+        },
+        {
+          "name": "Javascript",
+          "path": "javascript.png"
+        },
+        {
+          "name": "HTML",
+          "path": "html.png"
+        },
+        {
+          "name": "SCSS",
+          "path": "sass.png"
         }
       ],
       "albums": [
@@ -116,6 +180,14 @@
         {
           "name": "Javascript",
           "path": "javascript.png"
+        },
+        {
+          "name": "HTML",
+          "path": "html.png"
+        },
+        {
+          "name": "CSS",
+          "path": "css.png"
         }
       ],
       "albums": [
@@ -134,6 +206,14 @@
         {
           "name": "React",
           "path": "react.png"
+        },
+        {
+          "name": "HTML",
+          "path": "html.png"
+        },
+        {
+          "name": "CSS",
+          "path": "css.png"
         }
       ],
       "albums": [

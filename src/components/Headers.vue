@@ -49,7 +49,7 @@ export default {
 
 <template >
   <header class="py-2 pt-1 pt-lg-4  ">
-    <nav class="d-flex container justify-content-between">
+    <nav class="d-flex my-container justify-content-between">
       <a class="logo " :href="links[0].href" >{{ links[0].name }}</a> 
       <div class="wrapper-bars">
         <button class="bars"><i class="fa-solid fa-bars"></i></button>
@@ -159,7 +159,7 @@ ul{
   top: 100%;
   left: -100%;
   width: 100%;
-  padding: 1rem 4%;
+  padding: 1rem 5%;
   background-color: $primary_color;
   box-shadow: 0 .5rem 1rem rgba( 0,0,0, .2);
   transition:.25s ease;
@@ -171,6 +171,7 @@ ul{
  a{
   display: block;
   font-size: 2rem;
+  padding-left: 10px;
  }
 
 }

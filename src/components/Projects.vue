@@ -55,8 +55,8 @@ export default {
 
 <template>
   <section id="Projects">
-    <!-- container  -->
-    <div class="container pt-4">
+    <!-- my-container  -->
+    <div class="my-container pt-4">
       <h1 class="text-center">My <span>Projects</span></h1>
 
       <div class="wrapper-ul">
@@ -93,13 +93,13 @@ export default {
     padding-bottom: 40px;
     height: 100%;
   }
-  .container {
+  .my-container {
     padding: 0 30px;
     height: 100%;
     h1 {
       color: white;
       text-align: center;
-      font-size: 56px;
+      font-size: 50px;
       font-weight: 900;
       margin-top: 70px;
      margin-bottom: 40px;
