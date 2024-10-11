@@ -27,7 +27,7 @@ export default {
 };
 </script>
 <template>
-  <section id="AppHome" class="pages">
+  <section id="AppHome" >
     <div class="my-container">
       <div
         class="row flex-lg-wrap justify-content-lg-between justify-content-center"
@@ -66,7 +66,9 @@ export default {
         </div>
         <!-- container social  -->
         <div class="img-my col-12 col-lg-4"></div>
-        <div
+      </div>
+
+      <div
           class="home-social"
           data-aos="fade-up"
           data-aos-anchor-placement="top-bottom"
@@ -81,7 +83,7 @@ export default {
             </template>
           </ul>
         </div>
-      </div>
+
     </div>
   </section>
 </template>
@@ -99,7 +101,7 @@ export default {
   color: #ffffff;
   animation: waviy 1.5s infinite;
   animation-delay: calc(0.1s * var(--i));
-  font-size: 36px;
+  font-size: 26px;
 
   
   @media (min-width: 576px) {
@@ -126,7 +128,8 @@ export default {
   background: #081b29;
   color: var(--text-color);
   /* border: 1px solid red; */
-  height: 100vh;
+  min-height: 100vh;
+  padding-bottom: 20px;
   display: flex;
   align-items: center;
   /* inizio home content  */
@@ -198,7 +201,7 @@ export default {
         }
       }
       @media screen and (max-width: 992px) {
-        font-size: 40px;
+        font-size: 25px;
         text-align: center;
       }
       &::before {
@@ -219,14 +222,14 @@ export default {
     /* btn  */
 
     .btn-box {
-      width: 345px;
+      width: 98%;
       height: 50px;
       display: flex;
       justify-content: space-between;
       position: relative;
 
-      @media screen and (max-width: 992px) {
-        margin: 0 auto;
+      @media screen and (min-width: 560px) {
+        width: 340px;
       }
       &::before {
         @include animation-showRight;
@@ -284,15 +287,13 @@ export default {
   /* inizio home social  */
 
   .home-social {
-    position: absolute;
-    bottom: 40px;
-    width: 250px;
-
-    @media screen and (max-width: 992px) {
-      bottom: 20px;
-      width: 250px;
-    }
-
+    width: 80%;
+    margin: 0 auto;
+    @media screen and (min-width: 560px) {
+        width: 250px;
+        margin: 0;
+        margin-top: 20px ;
+      }
     &::before {
       @include animation-showRight;
       animation-delay: 2.5s;
