@@ -35,7 +35,7 @@ export default {
       <div class="row row-cols-1 row-cols-lg-2 mb-5 align-items-lg-center">
         <div class="col col-left">
           <p class="">
-          Ciao! Mi chiamo Casimiro Moliterni, sono un Junior Full Stack Web Developer con una grande passione per lo sviluppo di applicazioni web moderne e intuitive. Ho iniziato il mio percorso di formazione presso Boolean, dove ho approfondito vari linguaggi di programmazione e tecnologie legate al web, perfezionando le mie competenze nella creazione di siti e applicazioni performanti e scalabili. Al termine del corso, ho ottenuto un <span><button class="btn-attestato" @click="toggleModal('attestato')">attestato</button></span>.
+          Ciao! Mi chiamo Casimiro Moliterni, sono un Junior Full Stack Web Developer di 24 anni con una grande passione per lo sviluppo di applicazioni web moderne e intuitive. Ho iniziato il mio percorso di formazione presso Boolean, dove ho approfondito vari linguaggi di programmazione e tecnologie legate al web, perfezionando le mie competenze nella creazione di siti e applicazioni performanti e scalabili. Al termine del corso, ho ottenuto un'<span><button class="btn-attestato" @click="toggleModal('attestato')">attestato</button></span>.
         <br><br>
         Nel corso della mia esperienza, ho partecipato a numerosi progetti, tra cui lo sviluppo di siti vetrina, gestionali personalizzati e web app interattive. Ogni progetto mi ha permesso di affinare le mie capacità di problem solving e migliorare l'esperienza utente attraverso soluzioni tecniche efficienti e innovative.
         <br><br>

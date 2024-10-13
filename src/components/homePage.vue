@@ -53,10 +53,9 @@ export default {
           </h1>
           <TextTyping></TextTyping>
           <p class="">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint porro
-            illo non dolores molestias autem dicta! Numquam cumque vero
-            corporis. Unde, fugiat. Iure voluptatem doloribus id ut omnis
-            assumenda dignissimos!
+           Benvenuto sul mio sito personale ! <br>
+           Sono un Junior Developer se vuoi conoscermi meglio esplora il mio sito
+           per vedere le mie skills e i miei progetti !
           </p>
           <!-- container button  -->
           <div class="btn-box">
@@ -65,7 +64,7 @@ export default {
           </div>
         </div>
         <!-- container social  -->
-        <div class="img-my col-12 col-lg-4"></div>
+        <div class="img-my col-12 col-lg-4B"></div>
       </div>
 
       <div
