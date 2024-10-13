@@ -313,9 +313,10 @@ export default {
     z-index: 1;
   }
   .wrapper-checkbox {
+    
     #privacy{
-      width: auto;
-      height: 10px;
+      max-width: 10px;
+      max-height: 10px;
       margin: 0 10px 0 5px;
     }
     /* display: flex; */
