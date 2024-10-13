@@ -7,11 +7,15 @@ export default {
   data() {
     return {
       active:1,
-      store
+      store,
+      classActive:false
     };
   },methods:{
     linkActive(index){
      return this.active = index ;
+    },
+    toggleNavbar(){
+         this.classActive = !this.classActive;
     }
   }
 };
@@ -22,9 +26,9 @@ export default {
     <nav class="d-flex my-container justify-content-between">
       <a class="logo " :href="store.linksNavbar[0].href" >{{ store.linksNavbar[0].name }}</a> 
       <div class="wrapper-bars">
-        <button class="bars"><i class="fa-solid fa-bars"></i></button>
+        <button class="bars" @click="toggleNavbar()"><i class="fa-solid fa-bars"></i></button>
       </div>
-      <ul class="">
+      <ul :class="{activeUl : classActive}">
         <template v-for="link,index in store.linksNavbar">
           <li v-if="link.name !== 'Casimiro.'" :class="{ 'flex-grow-1 logo': link.name === 'Casimiro', 'links' : link.name !== 'Casimiro' }" >
            <a  :href="link.href" class="link" @click="linkActive(index)" :class="{active : index === active}">{{ link.name }}</a> 
