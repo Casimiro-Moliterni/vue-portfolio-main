@@ -60,7 +60,7 @@ export default {
       <h1 class="text-center">My <span>Projects</span></h1>
 
       <div class="wrapper-ul">
-        <ul class="p-0 m-0 row row-cols-2 row-cols-lg-4 justify-content-center">
+        <ul class="p-0 m-0 row row-cols-2 row-cols-lg-4 justify-content-center" translate="no">
           <li
             v-for="(link, index) in store.listProjectLink"
             class="btn-list-projects"
