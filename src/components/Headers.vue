@@ -71,6 +71,12 @@ header {
 
   .wrapper-bars{
     display: block;
+    position: relative;
+    &::after {
+    @include animation-showRight;
+        right: 0;
+        animation-delay: 2s;
+      }
   .bars{
     border: none;
     background-color: transparent;
