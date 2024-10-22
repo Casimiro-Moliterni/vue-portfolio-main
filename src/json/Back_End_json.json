@@ -39,6 +39,44 @@
         ]
       },
       {
+        "name": "Travel-App",
+        "slug": "travel-app",
+        "poster": "travel-app.jpg",
+        "technologies": [
+          {
+            "name": "Laravel",
+            "path": "laravel.png"
+          },
+          {
+            "name": "PHP",
+            "path": "php.png"
+          },
+          {
+            "name": "Javascript",
+            "path": "javascript.png"
+          },
+          {
+            "name": "SASS",
+            "path": "sass.png"
+          },
+          {
+            "name": "Bootstrap",
+            "path": "bootstrap.png"
+          },
+          {
+            "name": "HTML",
+            "path": "html.png"
+          }
+        ],
+        "albums": [
+          {
+            "name": "",
+            "path": "",
+            "description": ""
+          }
+        ]
+      },
+      {
         "name": "Laravel Projects",
         "slug": "Laravel-Projects",
         "poster": "laravel_project-api.png",
