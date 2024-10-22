@@ -10,19 +10,13 @@ export default {
   data() {
     return {
       store,
-      activeSection: null, // Stato della sezione attiva,
     };
   },
   computed: {
-    // ActiveLInk(){
-    //   const AboutSection = document.querySelector('#AbouteMe');
-    //   console.log(AboutSection)
-    // }
   },
   methods: {
   },
   mounted() {
-   store.ActiveLInk();
   },
 };
 </script>
