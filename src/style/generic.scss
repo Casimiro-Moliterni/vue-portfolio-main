@@ -12,9 +12,9 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
  }
- body{
+ body > *{
   overflow-x: hidden;
-
+  font-family: "Roboto", sans-serif;
  }
   .pages {
     height: 100vh;
