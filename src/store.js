@@ -138,7 +138,7 @@ linksNavbar: [
     name: "Contact",
     label: "contact",
      href:'#Contact'
-  },
+  }
 ],
   // funzioni ////////////////////////////////
 

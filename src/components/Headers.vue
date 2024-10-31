@@ -35,6 +35,12 @@ export default {
           </li>
         </template>
       </ul>
+      <div class="game-container">
+        <router-link :to="{name:'game'}" >
+          <i class="fa-solid fa-gamepad"></i>
+          <i class="fa-brands fa-golang"></i>
+        </router-link>
+      </div>
     </nav>
   </header>
 </template>
@@ -67,6 +73,59 @@ header {
    
  }
 
+ .game-container{
+      content: '';
+      position: absolute;
+      top: 20%;
+      left: 95%;
+      transform: translate(-10%, );
+      border: 2px solid $secondary_color;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+     /* Aggiungi questa animazione */
+      animation: rotate-border 2s linear infinite; /* Applicazione dell'animazione */
+      .fa-golang{
+       opacity: 0;
+       position: absolute;
+       top: -100%;
+       transition: 0.5s;
+   }
+
+     &:hover .fa-golang{
+       opacity: 1;
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50% , -50%);
+   }
+  &:hover .fa-gamepad{
+      opacity: 0;
+      transition: 0.5s;
+   }
+      @media screen and (max-width:991px){
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, - 50%);
+      }
+      /* Definisci l'animazione */
+@keyframes rotate-border {
+  0% {
+    border-color: $secondary_color; /* Colore iniziale */
+  }
+  50% {
+    border-color: $primary_color; /* Colore a metà animazione */
+  }
+  100% {
+    border-color: $secondary_color; /* Torna al colore iniziale */
+  }
+}
+
+   }
  @media screen and (max-width:991px) {
 
   .wrapper-bars{
@@ -88,6 +147,8 @@ header {
 }
 
  }
+
+ /* ul list  */
 ul{
   position: relative;
   list-style: none;
@@ -127,7 +188,6 @@ ul{
    &:hover{
       color: #00abf0;
    }
-   
  } 
 
  @media screen and (max-width:991px) {
