@@ -19,7 +19,7 @@ export const store = reactive({
       label:'ADDRESS'
     },
     {
-      name:'349 703 7309',
+      name:'348 703 7309',
       class:'fa-solid fa-phone',
       label:'TELEFONO'
     },
