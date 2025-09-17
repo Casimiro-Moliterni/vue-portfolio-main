@@ -3,11 +3,13 @@ import Headers from './components/Headers.vue';
 import { store } from './store';
 import { toggle } from './scroll_section.js'
 import Footer from './components/footer.vue';
+import { SpeedInsights } from '@vercel/speed-insights/vue';
 export default{
     components:{
         Headers,
         store,
-        Footer
+        Footer,
+        SpeedInsights
     },
     data(){
         return{
@@ -26,6 +28,7 @@ export default{
 
 <template>
  <router-view></router-view>
+ <SpeedInsights />
 </template>
 
 <style lang="scss">
